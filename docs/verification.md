@@ -74,4 +74,34 @@ Lighthouse reported no run warnings. Local goals Performance >=90 and CLS <=0.1 
 
 ## Unverified boundaries
 
-No public deployment, Actions run, domain ownership/DNS/HTTPS mapping, public route/asset check, physical-device test, Firefox/WebKit run, screen-reader review, full WCAG audit or field performance measurement. App platform/hook results are attributed to Client documentation reviewed on 2026-10-25; no Client build, SSH connection or app release was performed here. Public release remains separately authorized work described in `docs/operations.md`.
+Initial implementation checks above were local. Public Actions/HTTPS/routes/assets were subsequently verified as recorded below. Domain registrar ownership, physical-device tests, Firefox/WebKit, screen readers, a full WCAG audit and field performance remain unverified. App platform/hook results are attributed to Client documentation reviewed on 2026-10-25; no Client build, SSH connection or app release was performed here. The user subsequently authorized public release; operating procedures remain in `docs/operations.md`.
+
+## Public release recovery and verification — 2026-10-25
+
+The user approved GitHub Actions deployment and automatic main-push publication after the initial local-only scope. Existing custom domain `ddal.ggak.life` was preserved. Pages Source was already `workflow` when release work began; its approved TLS certificate was checked and HTTPS enforcement enabled. No DNS records were changed.
+
+### Corrected release path
+
+- Legacy branch/Jekyll run [40183423408](https://github.com/jujinkim/dgl-web/actions/runs/40183423408) failed on Astro frontmatter. It is not a suitable source build for this project.
+- Manual Astro run [40186173722](https://github.com/jujinkim/dgl-web/actions/runs/40186173722) failed because setup-node major 22 selected cached Node **22.23.3**, below Astro's minimum **22.23.4**.
+- CI now uses **Node 24**, runs on `main` pushes and retains manual dispatch. Local Node **24.22.1** check/format/build and 13 unit tests passed. The successful hosted build used **Node 24.21.0**.
+- Source commit **`7c3c48f07797ef031dc1fb453b34e612b4835bf0`** automatically started only the repository's Astro publishing workflow. Build/check/unit/upload and deployment succeeded in [run 40186442185](https://github.com/jujinkim/dgl-web/actions/runs/40186442185); deployment completed **2026-10-25 10:51:32 UTC**.
+- GitHub also lists a built-in dynamic `pages-build-deployment` entry. The API rejects manually disabling that built-in workflow (HTTP 422). It remains in history, while `build_type: workflow` uses the repository's one Astro YAML; no new legacy/Jekyll run was created for the successful release push. Historical runs were preserved.
+
+### Live checks
+
+Read-only HTTPS/browser verification completed **2026-10-25 10:53:17 UTC** at [ddal.ggak.life](https://ddal.ggak.life/), using Chromium 156. This is independent of the Actions result.
+
+| Area                  | Live result                                                                                          |
+| --------------------- | ---------------------------------------------------------------------------------------------------- |
+| HTTP                  | HTTP 301 redirects to HTTPS; TLS validation succeeds                                                 |
+| `/` and `/ko/`        | HTTP 200, correct languages, app name, exact brand expansion and canonical URLs                      |
+| Downloads             | All three native buttons remain disabled; pointer attempts do not navigate                           |
+| Navigation            | Header GitHub/ggak.life/cozelsil.com destinations match; actual locale clicks retain `#features`     |
+| FAQ and mobile        | Keyboard Enter opens native FAQ; 360px layouts have no horizontal overflow                           |
+| No JavaScript         | Both languages retain introduction, disabled controls and working native FAQ                         |
+| Assets                | Favicon, share PNG and generated CSS return HTTP 200; bytes/SHA-256 match local `dist` assets        |
+| Scripts and network   | Inline locale script works through real navigation; 0 page errors and 0 third-party browser requests |
+| Discovery/error paths | Sitemap and robots HTTP 200; unknown URL HTTP 404 with custom page and noindex                       |
+
+Ignored evidence files: `artifacts/live/verification.json`, `artifacts/live/en-360.png`, `artifacts/live/ko-360.png`. The subsequent documentation commit records this successful release and, under the approved main-push policy, runs the same publishing workflow again. Final run status and remote SHA are checked before handoff; its product source is unchanged.

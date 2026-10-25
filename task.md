@@ -25,7 +25,7 @@ Implement approved bilingual DaGaLi Client introduction in existing `dgl-web` re
 
 ## Remaining / resume
 
-Implementation and local acceptance are complete. Current authorized unit: repair CI Node selection, publish via GitHub Actions, and verify live HTTPS/EN/KO/assets/links. See the release log below and docs/operations.md.
+Implementation and local acceptance are complete. Authorized release recovery completed: compatible CI Node, Actions publication, main-push trigger, HTTPS and live EN/KO/assets/links verified. See release evidence below and docs/operations.md. The documentation push triggers the same approved pipeline, whose final result is checked before handoff.
 
 ### Unit 2 — 2026-10-25
 
@@ -55,4 +55,6 @@ Implementation and local acceptance are complete. Current authorized unit: repai
 - Manual Astro run `40186173722` failed at check: setup-node major 22 selected unsupported Node 22.23.3. Changed CI to Node 24 and added main-push trigger; retained manual dispatch.
 - Local Node 24.22.1 verification: check/Prettier 0 errors/warnings/hints, static build 3 pages, unit tests 13/13. Product UI unchanged; public browser verification follows deployment.
 - Workflows: one repository-controlled Astro YAML and one GitHub-generated legacy entry. GitHub rejects manual disabling of its dynamic built-in entry with HTTP 422. Source `workflow` replaces its branch/Jekyll trigger; old history is preserved. Verify that the new push starts only the Astro workflow.
-- Deployment, HTTPS enforcement and live verification pending.
+- Release fix commit `7c3c48f` pushed. Auto-triggered Astro run `40186442185` completed build and deploy successfully; hosted Node 24.21.0 confirmed in build logs. No new legacy/Jekyll run appeared for that push.
+- HTTPS enforcement enabled against the existing approved certificate; no DNS change. Live verification at 10:53:17 UTC: `/` and `/ko/` HTTP 200, HTTP→HTTPS 301, locale/hash/FAQ/mobile/no-JS behavior and disabled downloads passed. Favicon/PNG/generated CSS match local built bytes; sitemap/robots 200, custom missing route 404; zero page errors or third-party requests.
+- Evidence saved in `docs/verification.md` and ignored `artifacts/live/`. Final documentation commit records success and uses the same main-push pipeline; verify that final run and synchronized remote SHA before reporting completion.
