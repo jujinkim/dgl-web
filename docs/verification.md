@@ -154,3 +154,11 @@ The current Client README was read through the GitHub connector on 2026-10-25 (b
 - Local Lighthouse at `http://127.0.0.1:39971/` and `/ko/`, 360×800 mobile emulation, simulated 150ms RTT/1638.4 Kbps/4× CPU: three runs per language, all four categories **100**, **CLS 0**, LCP **902–903ms**, no warnings. These are local measurements.
 
 Evidence: ignored `artifacts/tmux-positioning/local/` and `artifacts/performance/`. Deployment and independent live browser/HTTPS evidence use `artifacts/tmux-positioning/release.json` and `artifacts/tmux-positioning/live/verification.json`. Physical devices, other browsers, screen readers, field performance and Client application verification remain outside these checks.
+
+## Approved hero reconnection copy — 2026-10-25
+
+Replaced only the EN/KO hero body with the user's approved SSH reconnection and tmux reattachment message. The exact English copy is "Let DGL handle SSH reconnection and tmux reattachment, so you can pick up where you left off." The Korean copy is "SSH가 끊겨도, 재접속부터 tmux 세션 복귀까지 DGL에 맡기세요. 하던 작업을 그대로 이어가세요."
+
+Node 24.22.1 check/format/build passed with 0 errors/warnings/hints; existing unit tests **13/13** and Chromium browser checks **35/35** passed, including axe, no-JS, disabled downloads, locale anchors, reflow and 200% text. Additional EN/KO rendered checks at 360×800 and 1440×900 confirmed exact hero text, preserved sizes, no overflow or page errors and served assets matching the build. Mobile/desktop hero captures were visually inspected. Lighthouse was not rerun for this text-only change.
+
+Evidence uses ignored `artifacts/hero-copy/local/`, `artifacts/hero-copy/release.json` and `artifacts/hero-copy/live/verification.json`; live checks follow the existing authorized main-push Pages deployment independently from local results.

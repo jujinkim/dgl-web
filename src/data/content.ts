@@ -77,7 +77,7 @@ export const content: Record<Language, Content> = {
     hero: {
       title: 'Step away.',
       emphasis: 'Keep your place.',
-      body: 'DaGaLi Client wraps tmux to help you reconnect to and manage sessions, windows and panes. Use the same tmux sessions directly from a local terminal, with built-in SSH when you need remote access.',
+      body: 'Let DGL handle SSH reconnection and tmux reattachment, so you can pick up where you left off.',
       github: 'Explore on GitHub',
       getApp: 'Get App',
       status: 'In development',
@@ -203,7 +203,7 @@ export const content: Record<Language, Content> = {
     hero: {
       title: '자리는 바뀌어도,',
       emphasis: '작업은 이어지게.',
-      body: 'DaGaLi Client는 tmux를 감싸 세션·창·패널 탐색과 재연결·관리를 돕습니다. 같은 tmux 세션을 로컬 터미널에서 직접 사용하고, 원격 접속이 필요하면 내장 SSH로 연결하세요.',
+      body: 'SSH가 끊겨도, 재접속부터 tmux 세션 복귀까지 DGL에 맡기세요. 하던 작업을 그대로 이어가세요.',
       github: 'GitHub에서 살펴보기',
       getApp: 'Get App',
       status: '개발 중',

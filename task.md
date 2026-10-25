@@ -84,3 +84,9 @@ Implementation and local acceptance are complete. Authorized release recovery co
 - Node 24.22.1: check/format/build passed, unit tests 13/13, existing browser checks 35/35, axe 0 violations. EN/KO rendered review at 320/360/768/1440/844px passed, including no-JS, short screens, 200% text, original sizes, disabled downloads and locale anchors. Desktop/mobile workflow/hero and share card visually inspected. Evidence: ignored `artifacts/tmux-positioning/local/`.
 - Local mobile Lighthouse, three runs per language: all four categories 100, CLS 0, LCP 902–903ms, no warnings. Physical devices, other browsers, screen readers, field performance and Client application tests remain separate.
 - Existing authorized main-push publication is used; release SHA/run and independent live EN/KO/browser/HTTPS/asset evidence are recorded in ignored `artifacts/tmux-positioning/release.json` and `artifacts/tmux-positioning/live/verification.json`.
+
+## Approved hero reconnection copy — 2026-10-25
+
+- User approved the finalized bilingual reconnection message for the hero. Updated only `hero.body` in EN/KO: DGL handles SSH reconnection and tmux reattachment so users can resume their work. Exact approved text and validation are recorded in `docs/verification.md`.
+- Node 24.22.1 check/format/build passed; unit tests 13/13, existing Chromium tests 35/35. EN/KO rendered checks at 360/1440px verified exact copy, existing font sizes, no overflow, no-JS and disabled controls; hero captures visually inspected. No new Lighthouse run for this text-only change.
+- Existing authorized main-push publication and independent live evidence use ignored `artifacts/hero-copy/release.json` and `artifacts/hero-copy/live/verification.json`; local evidence is in `artifacts/hero-copy/local/`.
