@@ -1,0 +1,40 @@
+---
+import { site, localePath, type Language } from '../data/site';
+import { content } from '../data/content';
+import Icon from './Icon.astro';
+import StarCount from './StarCount.astro';
+interface Props { language: Language; stars: number | null }
+const { language, stars } = Astro.props;
+const t = content[language];
+---
+<header class="site-header container">
+  <div class="identity">
+    <a class="brand" href={localePath(language)} aria-label={site.name}><span class="brand-mark"><Icon name="terminal" size={23} /></span><span>DaGaLi <span class="brand-web">Web</span></span></a>
+    <nav class="languages" aria-label={t.nav.language}>
+      <a href="/" lang="en" hreflang="en" aria-label="English" aria-current={language === 'en' ? 'page' : undefined} data-language-switch={language !== 'en' ? '' : undefined}>EN</a><span aria-hidden="true">/</span><a href="/ko/" lang="ko" hreflang="ko" aria-label="한국어" aria-current={language === 'ko' ? 'page' : undefined} data-language-switch={language !== 'ko' ? '' : undefined}>KO</a>
+    </nav>
+  </div>
+  <nav class="header-resources" aria-label={language === 'ko' ? '외부 링크' : 'External links'}>
+    <a class="github-link" href={site.repository}><Icon name="github" size={17} /> GitHub</a>
+    <StarCount count={stars} language={language} />
+    <a class="back-link" href="https://ggak.life">back to ggak.life <Icon name="external" size={14} /></a>
+    <a class="back-link" href="https://cozelsil.com">back to cozelsil.com <Icon name="external" size={14} /></a>
+  </nav>
+</header>
+<script>
+  // Locale links work without JS; progressively retain current reading section.
+  const switchLink = document.querySelector<HTMLAnchorElement>('[data-language-switch]');
+  const sections = [...document.querySelectorAll<HTMLElement>('section[id]')];
+  if (switchLink) {
+    const destination = switchLink.getAttribute('href')!;
+    let scheduled = false;
+    const update = () => {
+      const current = sections.filter(section => section.getBoundingClientRect().top <= innerHeight * .25).at(-1);
+      switchLink.href = `${destination}${current ? `#${current.id}` : ''}`;
+      scheduled = false;
+    };
+    if (sections.some(section => `#${section.id}` === location.hash)) switchLink.href = `${destination}${location.hash}`;
+    addEventListener('scroll', () => { if (!scheduled) { scheduled = true; requestAnimationFrame(update); } }, { passive: true });
+    addEventListener('hashchange', update);
+  }
+</script>

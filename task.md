@@ -7,7 +7,7 @@ Implement approved bilingual DaGaLi Client introduction in existing `dgl-web` re
 ## Work units
 
 - [x] 1. Approved records, Astro foundation, locale routes and local check/build.
-- [ ] 2. Reviewed content, terminal/flow, header, features, downloads and FAQ; browser verification.
+- [x] 2. Reviewed content, terminal/flow, header, features, downloads and FAQ; browser verification.
 - [ ] 3. Accessibility/responsive/no-JS/failure/performance verification, operating guide, final local commit.
 
 ## Decisions
@@ -25,4 +25,11 @@ Implement approved bilingual DaGaLi Client introduction in existing `dgl-web` re
 
 ## Remaining / resume
 
-Unit 1 ready for local commit. Next: implement R1–R6, run browser checks, then acceptance/performance and operations records. Future live deployment remains separate authorization.
+Units 1–2 implemented and locally verified. Next: actual-build star failure fixtures, mobile Lighthouse, maintenance/release/recovery guide, final records and local commit. Future live deployment remains separate authorization.
+
+### Unit 2 — 2026-10-25
+
+- Implemented R1–R6 using typed shared EN/KO content, common components and CSS; build-time stars render valid zero. Preview explicitly illustrative. Header resources match approved order. All three download controls use native disabled state; future URLs remain in site configuration.
+- Check: 18 files, 0 errors/warnings/hints. Static build: 3 pages plus sitemap. Unit tests 13/13. Playwright Chromium tests 33/33 (9.1s): both locales, destinations/hash preservation, blocked download pointer/programmatic/keyboard actions, keyboard/FAQ, no-JS, no external requests/storage, motion, metadata/assets/404, responsive 320/360/768/1440 and 844×390, 200% enlarged text.
+- Axe WCAG 2.2 AA tags: 0 violations with FAQs open at 360/768/1440 in both languages. This is a local automated check, not full conformance proof. Full-page EN/KO desktop/mobile screenshots visually inspected.
+- Foundation commit: `31cd6bf`. Unit 2 ready for local commit. Performance and actual-build timeout/failure fixtures remain for unit 3.
