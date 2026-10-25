@@ -1,0 +1,24 @@
+{
+  "name": "dagali-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.23.4" },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "check": "astro check",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.ts",
+    "test:e2e": "playwright test",
+    "perf": "node scripts/performance.mjs"
+  },
+  "dependencies": { "astro": "^7.4.2" },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "lighthouse": "^13.5.0",
+    "typescript": "^5.9.3"
+  }
+}
