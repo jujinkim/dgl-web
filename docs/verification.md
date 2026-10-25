@@ -128,3 +128,17 @@ Verified with temporary Node **24.22.1** and the existing Chromium 156 tooling:
 Local Lighthouse used 360×800 emulation, simulated 150ms RTT/1638.4 Kbps throughput/4× CPU throttling at `http://127.0.0.1:35181/` and `/ko/`. Reports are in ignored `artifacts/performance/`. Revision browser evidence and EN/KO desktop/mobile captures are in ignored `artifacts/revision/local/`.
 
 These results precede the authorized push. The existing Pages workflow and public HTTPS/browser delivery are checked separately afterward, with deployed SHA/run URL in ignored `artifacts/revision/release.json` and actual live evidence in `artifacts/revision/live/verification.json`. Local results do not prove public delivery, real-device usability, other browsers, screen-reader conformance or field performance. No Client application release or platform-state change is included.
+
+## Get App and hero integration — 2026-10-25
+
+The approved follow-up keeps Get App first and removes its numbered eyebrow, outer panel, duplicate introduction, visible package ID and extra repository link. Its product heading, single SSH + tmux + AI coding agents line, development badge and disabled platform buttons share the hero's left alignment and background, with 32px connecting padding. The repeated product label and workflow line were removed from the hero. Release timing and Apple-platform caveats now live in the download FAQ. All existing IDs, including `download-notice`, are retained; disabled buttons still reference that notice. Explanation sections now run 01 → 02 → 03 in both languages. Download configuration, public API usage and deployment architecture are unchanged.
+
+Verification used temporary Node **24.22.1** and Chromium **156**:
+
+- Astro/TypeScript: 0 errors, warnings or hints; formatting and static build passed. Existing unit tests **13/13**, existing browser acceptance **35/35**.
+- Existing browser checks cover disabled pointer/programmatic/keyboard actions, no JavaScript, language fragments, short screens, reduced motion, 200% enlarged text and reflow. Axe reported **0 violations** at 360/768/1440px in both locales.
+- Additional rendered review covered EN/KO at 320×740, 360×800, 768×1024, 1440×900 and 844×390. Product and hero alignment match; the panel and duplicate core line are absent; all section anchors and the FAQ notice remain. No horizontal overflow, page errors or third-party browser requests. Desktop/mobile captures were visually inspected.
+- Existing rem-based sizes remain: body 16px, hero lead 17px, supporting text 14px, terminal 12px. Large hero titles remain EN 58/43px and KO 50/36px at desktop/mobile breakpoints.
+- Local mobile Lighthouse, three runs per language: **100** for Performance, Accessibility, Best Practices and SEO; **CLS 0**, LCP **902–904ms**, no warnings. Audit origin `http://127.0.0.1:46775`, simulated 150ms RTT/1638.4 Kbps/4× CPU, 360×800 emulation. Reports remain in ignored `artifacts/performance/`.
+
+Local evidence is in ignored `artifacts/hero-integration/local/`. Publication uses the existing main-push Pages workflow. Deployment SHA/run evidence and the subsequent independent live HTTPS/browser checks are recorded in ignored `artifacts/hero-integration/release.json` and `artifacts/hero-integration/live/verification.json`. Physical devices, other browsers, screen-reader conformance and field performance remain unverified; no Client release is included.

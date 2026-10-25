@@ -45,19 +45,14 @@ interface Content {
     items: { icon: string; title: string; body: string; tag: string }[];
   };
   getApp: {
-    eyebrow: string;
     title: string;
-    body: string;
     status: string;
     unavailable: string;
-    notice: string;
-    repo: string;
-    package: string;
   };
   faq: {
     eyebrow: string;
     title: string;
-    items: { question: string; answer: string }[];
+    items: { id?: string; question: string; answer: string }[];
     source: string;
     reviewed: string;
   };
@@ -99,7 +94,7 @@ export const content: Record<Language, Content> = {
       footer: 'SSH → tmux → AI coding agents',
     },
     workflow: {
-      eyebrow: '02 / THE CONNECTION',
+      eyebrow: '01 / THE CONNECTION',
       title: 'SSH in. Return to tmux.',
       body: 'Your AI coding agents are already running in tmux. DaGaLi Client brings you back to the sessions, windows and panes you use on your server.',
       steps: [
@@ -111,7 +106,7 @@ export const content: Record<Language, Content> = {
       note: 'Disconnecting the client leaves a running tmux session on the server. Reconnect to that session to continue. An ordinary SSH shell may not preserve work after disconnection.',
     },
     features: {
-      eyebrow: '03 / LESS FRICTION',
+      eyebrow: '02 / LESS FRICTION',
       title: 'Keep the CLI. Simplify the way in.',
       body: 'Built around the moments between connecting, finding a session, and getting back to work. Features below are implemented in the development candidate; platform verification varies.',
       items: [
@@ -148,18 +143,12 @@ export const content: Record<Language, Content> = {
       ],
     },
     getApp: {
-      eyebrow: '01 / GET APP',
-      title: 'Get DaGaLi Client',
-      body: 'DaGaLi Client is in development. Public downloads are not available yet.',
+      title: 'DaGaLi Client',
       status: 'IN DEVELOPMENT',
       unavailable: 'Not available yet',
-      notice:
-        'Store listings and release timing are unconfirmed. The Apple button does not confirm iOS support or release.',
-      repo: 'Follow development on GitHub',
-      package: 'Planned package ID',
     },
     faq: {
-      eyebrow: '04 / GOOD TO KNOW',
+      eyebrow: '03 / GOOD TO KNOW',
       title: 'Before you connect.',
       items: [
         {
@@ -173,9 +162,10 @@ export const content: Record<Language, Content> = {
             'tmux holds sessions, windows and panes on the server. Closing SSH can leave that work running so you can attach again, provided the server, session and processes survive. A server restart, deleted session or terminated process can end the work. An ordinary SSH shell does not offer the same persistence guarantee.',
         },
         {
+          id: 'download-notice',
           question: 'Where can I download DaGaLi Client?',
           answer:
-            'Public downloads are not available yet. Apple App Store, Google Play and Desktop are all disabled here. Desktop is planned to point to GitHub Releases when a release is ready; no numeric Apple App Store ID has been assigned. Follow the repository for current progress.',
+            'Public downloads are not available yet. Apple App Store, Google Play and Desktop are all disabled here. Store listings and release timing are unconfirmed. The Apple button does not confirm iOS support or release. Desktop is planned to point to GitHub Releases when a release is ready; no numeric Apple App Store ID has been assigned. Follow the repository for current progress.',
         },
         {
           question: 'What is the platform status?',
@@ -230,7 +220,7 @@ export const content: Record<Language, Content> = {
       footer: 'SSH → tmux → AI coding agents',
     },
     workflow: {
-      eyebrow: '02 / 연결 흐름',
+      eyebrow: '01 / 연결 흐름',
       title: 'SSH로 연결해, tmux 작업으로.',
       body: '이미 tmux에서 실행 중인 AI 코딩 에이전트. DaGaLi Client로 서버의 익숙한 세션·창·패널에 돌아오세요.',
       steps: [
@@ -242,7 +232,7 @@ export const content: Record<Language, Content> = {
       note: '클라이언트 연결을 닫아도 실행 중인 tmux 세션은 서버에 남습니다. 같은 세션에 다시 연결해 이어가세요. 일반 SSH 셸의 작업은 연결 종료 후 보존되지 않을 수 있습니다.',
     },
     features: {
-      eyebrow: '03 / 주요 기능',
+      eyebrow: '02 / 주요 기능',
       title: 'CLI는 그대로. 진입은 더 편하게.',
       body: '서버 연결부터 원하는 세션을 찾아 다시 작업하기까지. 아래 기능은 개발용 후보에 구현되어 있으며, 플랫폼별 실제 검증 범위는 다릅니다.',
       items: [
@@ -279,18 +269,12 @@ export const content: Record<Language, Content> = {
       ],
     },
     getApp: {
-      eyebrow: '01 / GET APP',
-      title: 'DaGaLi Client 받기',
-      body: 'DaGaLi Client는 개발 중입니다. 공개 다운로드는 아직 준비 중입니다.',
+      title: 'DaGaLi Client',
       status: '개발 중',
       unavailable: '아직 다운로드할 수 없습니다',
-      notice:
-        '스토어 등록과 출시 일정은 미정입니다. Apple 버튼은 iOS 지원이나 출시 확정을 뜻하지 않습니다.',
-      repo: 'GitHub에서 개발 진행 확인',
-      package: '예정 패키지 ID',
     },
     faq: {
-      eyebrow: '04 / 알아두기',
+      eyebrow: '03 / 알아두기',
       title: '연결하기 전에.',
       items: [
         {
@@ -304,9 +288,10 @@ export const content: Record<Language, Content> = {
             'tmux는 서버에서 세션·창·패널을 관리합니다. 서버와 tmux 세션, 프로세스가 살아 있다면 SSH 연결을 닫은 뒤 다시 붙어 작업을 이어갈 수 있습니다. 서버 재시작, 세션 삭제, 프로세스 종료로 작업이 끝날 수 있으며 일반 SSH 셸은 같은 영속성을 보장하지 않습니다.',
         },
         {
+          id: 'download-notice',
           question: 'DaGaLi Client는 어디서 받나요?',
           answer:
-            '아직 공개 다운로드를 제공하지 않습니다. Apple App Store·Google Play·Desktop 버튼은 모두 비활성 상태입니다. Desktop은 출시 준비가 끝나면 GitHub Releases로 연결할 예정이며, Apple의 숫자형 App Store ID는 미정입니다. 현재 진행 상황은 저장소에서 확인하세요.',
+            '아직 공개 다운로드를 제공하지 않습니다. Apple App Store·Google Play·Desktop 버튼은 모두 비활성 상태입니다. 스토어 등록과 출시 일정은 미정입니다. Apple 버튼은 iOS 지원이나 출시 확정을 뜻하지 않습니다. Desktop은 출시 준비가 끝나면 GitHub Releases로 연결할 예정이며, Apple의 숫자형 App Store ID는 미정입니다. 현재 진행 상황은 저장소에서 확인하세요.',
         },
         {
           question: '플랫폼별 개발 상태는 어떤가요?',

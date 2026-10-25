@@ -21,70 +21,45 @@ const downloadIcons = { apple: 'store', google: 'play', desktop: 'desktop' };
   <main id="main">
     <section
       id="get-app"
-      class="section get-app-section container"
+      class="get-app-section container"
       aria-labelledby="get-app-title"
     >
-      <div class="download-panel">
-        <div class="download-heading">
-          <div>
-            <p class="eyebrow">{t.getApp.eyebrow}</p>
-            <h1 id="get-app-title">{t.getApp.title}</h1>
-          </div>
-          <span class="development-badge">
-            <span class="status-dot amber"></span>
-            {t.getApp.status}
-          </span>
-        </div>
-        <p class="workflow-stack">{t.workflowStack}</p>
-        <p class="section-intro">{t.getApp.body}</p>
-        <div class="download-buttons" aria-describedby="download-notice">
-          {downloads.map((download) => (
-            <button
-              class="download-button"
-              type="button"
-              disabled={!download.available}
-              aria-describedby="download-notice"
-              data-download={download.id}
-            >
-              <Icon name={downloadIcons[download.id]} size={26} />
-              <span>
-                <strong>{download.label}</strong>
-                <span>{t.getApp.unavailable}</span>
-              </span>
-              <span class="download-dash" aria-hidden="true">
-                —
-              </span>
-            </button>
-          ))}
-        </div>
-        <p class="download-notice" id="download-notice">
-          {t.getApp.notice}
-        </p>
-        <div class="download-bottom">
-          <a class="text-link" href={site.repository}>
-            {t.getApp.repo}
-            <Icon name="arrow" size={17} />
-          </a>
-          <span class="package-id">
-            {t.getApp.package} <code>{site.packageId}</code>
-          </span>
-        </div>
+      <div class="download-heading">
+        <h1 id="get-app-title">
+          {t.getApp.title}{' '}
+          <span class="app-abbreviation">/ {site.abbreviation}</span>
+        </h1>
+        <span class="development-badge">
+          <span class="status-dot amber"></span>
+          {t.getApp.status}
+        </span>
+      </div>
+      <p class="workflow-stack">{t.workflowStack}</p>
+      <div class="download-buttons" aria-describedby="download-notice">
+        {downloads.map((download) => (
+          <button
+            class="download-button"
+            type="button"
+            disabled={!download.available}
+            aria-describedby="download-notice"
+            data-download={download.id}
+          >
+            <Icon name={downloadIcons[download.id]} size={26} />
+            <span>
+              <strong>{download.label}</strong>
+              <span>{t.getApp.unavailable}</span>
+            </span>
+            <span class="download-dash" aria-hidden="true">
+              —
+            </span>
+          </button>
+        ))}
       </div>
     </section>
     <section id="intro" class="hero container" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">
-          <span class="small-cross" aria-hidden="true">
-            +
-          </span>
-          {t.workflowStack}
-        </p>
         <p class="name-expansion">{site.expansion}</p>
         <h2 id="hero-title" class="hero-title">
-          <span class="app-name">
-            {site.appName}{' '}
-            <span class="app-abbreviation">/ {site.abbreviation}</span>
-          </span>
           {t.hero.title}
           <br />
           <span class="accent">{t.hero.emphasis}</span>
@@ -205,7 +180,7 @@ const downloadIcons = { apple: 'store', google: 'play', desktop: 'desktop' };
                 +
               </span>
             </summary>
-            <p>{item.answer}</p>
+            <p id={item.id}>{item.answer}</p>
           </details>
         ))}
       </div>
