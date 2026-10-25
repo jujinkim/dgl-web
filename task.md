@@ -2,7 +2,7 @@
 
 ## Goal and authorization
 
-Implement approved bilingual DaGaLi Client introduction in existing `dgl-web` repository. Scope R1–R6 and checklist in `docs/project-checklist.md`. User explicitly requested implementation; local installation, checks and commits authorized. Remote writes, push, Pages activation, DNS and deployment excluded.
+Implement approved bilingual DaGaLi Client introduction in existing `dgl-web` repository. Scope R1–R6 and checklist in `docs/project-checklist.md`. User explicitly requested implementation; local installation, checks and commits authorized. Original implementation scope excluded remote actions. The user subsequently authorized push, then GitHub Actions publication with a main-push trigger. Unrelated DNS changes remain excluded.
 
 ## Work units
 
@@ -25,7 +25,7 @@ Implement approved bilingual DaGaLi Client introduction in existing `dgl-web` re
 
 ## Remaining / resume
 
-Implementation, local acceptance and records complete. This final unit is saved in the commit containing this record; next product operation is separately authorized remote publication, following docs/operations.md. No blocking implementation work remains. Future live deployment remains separate authorization.
+Implementation and local acceptance are complete. Current authorized unit: repair CI Node selection, publish via GitHub Actions, and verify live HTTPS/EN/KO/assets/links. See the release log below and docs/operations.md.
 
 ### Unit 2 — 2026-10-25
 
@@ -46,3 +46,13 @@ Implementation, local acceptance and records complete. This final unit is saved 
 - Unverified scope: public deployment/Actions/DNS/domain/HTTPS, physical devices, Firefox/WebKit, screen readers/full WCAG audit and field performance. No app build/SSH/client release performed. No push or remote writes.
 
 - Final review: all checklist items checked with local evidence. Clean lockfile installation and audit passed. Sticky header and final built output passed 35 browser checks; final Lighthouse six runs all 100 / CLS 0. No known implementation blockers.
+
+## Release recovery — 2026-10-25
+
+- User authorized push and then accepted switching from branch/Jekyll to GitHub Actions, running deployment and adding automatic main-push releases.
+- Original source release pushed as merge commit `05b04b9`, preserving the user's root CNAME commit. Local and remote SHA matched, worktree clean.
+- Legacy branch/Jekyll run `40183423408` failed reading Astro frontmatter. User-selected Pages Source is now `workflow`; existing `ddal.ggak.life` mapping and approved TLS certificate confirmed read-only.
+- Manual Astro run `40186173722` failed at check: setup-node major 22 selected unsupported Node 22.23.3. Changed CI to Node 24 and added main-push trigger; retained manual dispatch.
+- Local Node 24.22.1 verification: check/Prettier 0 errors/warnings/hints, static build 3 pages, unit tests 13/13. Product UI unchanged; public browser verification follows deployment.
+- Workflows: one repository-controlled Astro YAML and one GitHub-generated legacy entry. GitHub rejects manual disabling of its dynamic built-in entry with HTTP 422. Source `workflow` replaces its branch/Jekyll trigger; old history is preserved. Verify that the new push starts only the Astro workflow.
+- Deployment, HTTPS enforcement and live verification pending.

@@ -1,6 +1,6 @@
 # Project checklist
 
-Read affected criteria before changes; recheck against actual artifacts afterward. Evidence and limitations live in `task.md` and `docs/verification.md`. Checked items represent local scope only.
+Read affected criteria before changes; recheck against actual artifacts afterward. Evidence and limitations live in `task.md` and `docs/verification.md`. Local checks and public deployment checks are recorded separately.
 
 - [x] **Brand / R1:** DaGaLi Web, DaGaLi Client, DGL and exact `dDal gGak Life` in both locales. Check rendered text and metadata.
 - [x] **Content / R2–R3, R6:** Compare Client README/agent documentation; distinguish implementation, reported verification and release. No implied iOS release or ordinary-shell persistence.
@@ -14,4 +14,5 @@ Read affected criteria before changes; recheck against actual artifacts afterwar
 - [x] **No JavaScript:** Core copy, links, locale routes, FAQ and disabled downloads work without JS. Hash-preserving switch is progressive enhancement; explicit section links remain available.
 - [x] **Metadata:** Per-locale title/description/canonical/hreflang, self-hosted share image, sitemap/robots and 404. Validate built output and HTTP assets.
 - [x] **Performance:** Local mobile Lighthouse Performance >=90, CLS <=0.1 target. Record browser/version, throttling, URL, run count and actual results; local result is not field proof.
-- [x] **Save and operation:** Relevant check → build → unit/browser checks, then local unit commits with task record. Record failures/unrun gates. Manual-only Pages preparation, no push/activation/DNS/deployment. Document release, maintenance and rollback.
+- [x] **Save and operation:** Relevant check → build → unit/browser checks, then local unit commits with task record. Record failures/unrun gates. User subsequently approved push, Actions deployment and automatic main-push releases. Keep one Astro publishing workflow with Node 24, static `dist` artifact and manual fallback. Document release, maintenance and rollback; no unrelated DNS changes.
+- [ ] **Public deployment:** Pages source is GitHub Actions, legacy Jekyll branch build does not run for the release, main push triggers the Astro workflow, CI Node satisfies Astro, build/deploy succeeds, and HTTPS/live EN/KO/routes/assets/links/download states are verified. Record run URL, deployed SHA and limitations separately from local results.

@@ -1,7 +1,9 @@
 name: Deploy DaGaLi Web to GitHub Pages
 
-# Manual only: pushing this file does not authorize or start a deployment.
+# Publish verified Astro output on main pushes; retain manual recovery runs.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -18,7 +20,7 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: '22'
+          node-version: '24'
           cache: npm
       - run: npm ci
       - run: npm run check

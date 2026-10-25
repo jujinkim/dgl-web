@@ -2,9 +2,9 @@
 
 ## Ownership and current boundary
 
-The user operates the site and owns the domain, DNS, GitHub repository, deployment decisions and recovery. Current authorization covers local implementation, checks and commits only. No push, Pages activation, DNS change or public deployment was performed. `astro.config.mjs`, `public/CNAME` and metadata prepare `https://ddal.ggak.life`; they do not prove domain control or live publication.
+The user operates the site and owns the domain, DNS, GitHub repository, deployment decisions and recovery. Initial authorization covered local implementation and commits. The user subsequently authorized push, GitHub Actions deployment and automatic main-push publication. Current work includes configuring and running that release path, plus live verification. Unrelated DNS changes remain outside scope. `astro.config.mjs`, `public/CNAME` and metadata prepare `https://ddal.ggak.life`; they do not prove domain control or live publication.
 
-The repository remains `jujinkim/dgl-web`, branch `main`. `.github/workflows/pages.yml` is manual-dispatch only; no push-triggered deployment exists. No paid service, backend, DB or secret is required. The build uses GitHub's public repository API without authentication. GitHub API outages/rate limits omit only the star count.
+The repository remains `jujinkim/dgl-web`, branch `main`. `.github/workflows/pages.yml` runs on main pushes and manual dispatch. CI uses Node 24; selecting major 22 previously installed 22.23.3, below Astro's minimum 22.23.4. Pages Source must be GitHub Actions (`build_type: workflow`), publishing only `dist`. The GitHub-generated `pages-build-deployment` entry can remain visible in Actions history; GitHub rejects manually disabling that built-in workflow. With workflow-based Pages, legacy Jekyll builds are no longer the publication path. Do not create a second Astro deployment workflow. No paid service, backend, DB or secret is required. The build uses GitHub's public repository API without authentication. GitHub API outages/rate limits omit only the star count.
 
 ## Routine changes
 
@@ -29,12 +29,12 @@ Dependencies are lockfile-pinned. Review upgrades and `npm audit`; avoid forced 
 
 Before enabling anything, confirm public release artifacts/listings and actual supported platforms with the operator. Update configuration, localized status copy, platform FAQ, review date, rendered control behavior and related tests together. An available download should render a link with the verified destination. Existing disabled-control tests intentionally fail when availability changes; update them to test the approved release behavior. Never infer iOS support or invent an Apple ID. Never claim that ordinary SSH shells preserve running work after disconnect.
 
-## Future deployment — requires separate authorization
+## Deployment and subsequent releases
 
 1. Verify repository remote/branch, clean local worktree, reviewed commit, and all applicable local checks. Inspect current Pages and DNS state read-only before changes. Confirm operator controls `ddal.ggak.life` and parent-domain DNS.
 2. When authorized, push the verified commit. Confirm local SHA, remote branch SHA and repository synchronization. Push alone is not deployment proof.
 3. When authorized, select GitHub Actions as the Pages source and configure the custom domain. Verify DNS against current GitHub Pages documentation; never guess record targets or replace unrelated records. The custom domain uses root routes, so Astro has no `/dgl-web` base prefix.
-4. Run the manual **Deploy DaGaLi Web to GitHub Pages** workflow for the reviewed `main` commit. It checks, tests, builds, uploads `dist` and deploys through GitHub Pages. It does not run browser or Lighthouse gates; those must have been checked locally for the release. Do not add a push trigger without an operating decision.
+4. Push the reviewed `main` commit to trigger **Deploy DaGaLi Web to GitHub Pages**, or manually run that same workflow for recovery. It checks, tests, builds, uploads `dist` and deploys through GitHub Pages. It does not run browser or Lighthouse gates; those must have been checked locally for the release. The user approved the main-push trigger; a push to main now initiates publication. Avoid manually dispatching a duplicate run for a push that already triggered one.
 5. Verify successful Actions **deployment**, Pages domain mapping and certificate. Then inspect live HTTPS responses and browser behavior at `/`, `/ko/`, a missing route, CSS/JS/favicon/share image/sitemap/robots, language and section links, disabled or newly approved download behavior, and external destinations. Verify `CNAME` output. Do not equate local measurements with field performance or WCAG conformance.
 6. Record deployed SHA, Actions URL, time, live results and remaining gaps. Domain/HTTPS failures remain operator work until actual evidence confirms resolution.
 

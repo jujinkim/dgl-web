@@ -11,7 +11,7 @@
 
 ## 개발
 
-Node **22.23.4 이상**, npm 필요. GitHub Pages는 Node 22 최신 버전을 사용합니다.
+Node **22.23.4 이상**, npm 필요. GitHub Pages CI는 **Node 24**를 사용합니다.
 
 ```sh
 npm ci
@@ -62,4 +62,4 @@ npx --yes --package=node@22.23.4 -c 'npm ci && npm run check && npm run build &&
 | `docs/operations.md`              | 콘텐츠·출시 설정 변경, 배포·복구 절차        |
 | `task.md`                         | 진행·검증·로컬 커밋·재개 지점                |
 
-목표 주소는 `https://ddal.ggak.life`. 현재 작업은 로컬 구현과 검증까지이며 push·Pages 활성화·DNS 변경·공개 배포는 포함하지 않습니다. Pages workflow는 **수동 실행 전용**으로 준비했습니다. 실제 주소·도메인 제어·배포 성공 여부는 별도 검증이 필요합니다.
+운영 주소는 `https://ddal.ggak.life`. Pages Source는 **GitHub Actions**로 사용하며, `main` push 시 Astro 빌드·검증 후 `dist/`를 배포합니다. 수동 실행도 유지합니다. 기본 브랜치/Jekyll 배포는 사용하지 않습니다. Actions 성공과 별개로 실주소 HTTPS·언어 경로·자산·링크를 검증하고 `docs/verification.md`에 결과를 기록합니다.

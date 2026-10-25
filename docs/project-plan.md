@@ -1,6 +1,6 @@
 # DaGaLi Web — approved project plan
 
-Approved implementation source: the user's DaGaLi Web plan, supplied with an explicit implementation request on 2026-10-25. Development and local commits are authorized. Pushes, Pages activation, DNS changes, and public deployment are excluded.
+Approved implementation source: the user's DaGaLi Web plan, supplied with an explicit implementation request on 2026-10-25. Initial scope covered development and local commits. Subsequent user instructions authorized push, then GitHub Actions publication and main-push automatic releases. Unrelated DNS changes remain excluded. These later instructions supersede the original manual-only release boundary.
 
 ## Purpose and ownership
 
@@ -44,7 +44,7 @@ No added workflow skills selected: single landing page and one operator can reus
 3. Exercise accessibility, responsive/no-JS behavior, stars/failure cases and mobile Lighthouse; write actual results and operating/rollback steps; local commit.
 4. Future, separately authorized release: push, configure Pages/domain/DNS, inspect Actions and verify live HTTPS, locale paths, assets and links. Never equate push/build with live proof.
 
-Store a manual-dispatch Pages workflow for review; do not activate or run it. Custom-domain configuration is local preparation, not evidence of domain control. Operator owns DNS/domain and release/recovery. Rollback uses previous verified commit, rebuild and separately authorized redeployment.
+Initially prepared a manual-dispatch Pages workflow. The user subsequently approved deploying through Actions and adding main-push releases. Keep `workflow_dispatch` for recovery and publish only Astro's generated `dist` artifact; replace legacy Jekyll branch deployment with workflow-based Pages. The built-in legacy workflow entry may remain visible in Actions history; it is not a second Astro publisher. Use Node 24 in CI: `node-version: '22'` resolved to unsupported 22.23.3 despite Astro requiring >=22.23.4. Custom-domain configuration alone is not evidence of live publication. Operator owns DNS/domain and release/recovery. Rollback uses a previous verified commit, rebuild and authorized redeployment.
 
 ## Sources read
 
