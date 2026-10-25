@@ -4,20 +4,20 @@ Approved implementation source: the user's DaGaLi Web plan, supplied with an exp
 
 ## Purpose and ownership
 
-Introduce **DaGaLi Client (DGL)** to people using AI coding agents through SSH and tmux on personal servers. Explain purpose, features, development evidence, GitHub, and unavailable downloads. Site name: **DaGaLi Web**. Name expansion: **`dDal gGak Life`**, preserving exact case. Target domain: `https://ddal.ggak.life`.
+Introduce **DaGaLi Client (DGL)** as a tmux wrapper for session reconnection and management. Explain how to run AI coding agents in standard tmux sessions, manage them with DGL, and attach directly from a local terminal when needed. Built-in SSH provides remote access. tmux supplies the underlying session and persistence behavior. Explain features, development evidence, GitHub, and unavailable downloads. Site name: **DaGaLi Web**. Name expansion: **`dDal gGak Life`**, preserving exact case. Target domain: `https://ddal.ggak.life`.
 
 The user owns and approved branding, English/Korean routes, restrained terminal design, content scope, disabled downloads, Git/main/existing GitHub repository, Astro/GitHub Pages, no extra workflow skills, and operating boundaries. The assistant chooses internal component boundaries, CSS, types, test tools, and build procedures within that scope. One operator, no fixed deadline, no paid services, payments, advertising, or visitor analytics.
 
 ## Requirements and acceptance
 
-| ID  | Approved behavior                                                                                                         | Evidence                                              |
-| --- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
-| R1  | App name, exact name expansion, value, explicitly illustrative terminal; GitHub and Get App anchors                       | Both languages, browser and no-JS checks              |
-| R2  | Personal server → SSH → tmux → AI agent diagram; return to surviving server-side sessions                                 | Source review and static diagram                      |
-| R3  | Host management, session/window/pane navigation, desktop splits, Android input helpers, optional agent status integration | Reviewed Client README and agent-status documentation |
-| R4  | Three dim, native disabled Apple App Store / Google Play / Desktop buttons; development notice                            | Pointer, keyboard, no-JS; shared configuration        |
-| R5  | Header right side in order: GitHub, star count when available, back to ggak.life, back to cozelsil.com                    | DOM order and navigation checks                       |
-| R6  | FAQ: server prerequisites, tmux role, downloads, platform development/verification status                                 | Both languages; native details elements               |
+| ID  | Approved behavior                                                                                                             | Evidence                                              |
+| --- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| R1  | App name, exact name expansion, value, explicitly illustrative terminal; GitHub and Get App anchors                           | Both languages, browser and no-JS checks              |
+| R2  | Start tmux → run agents → manage with DGL → reconnect; standard tmux also usable from a local terminal; SSH for remote access | User clarification, source review and static diagram  |
+| R3  | Host management, session/window/pane navigation, desktop splits, Android input helpers, optional agent status integration     | Reviewed Client README and agent-status documentation |
+| R4  | Three dim, native disabled Apple App Store / Google Play / Desktop buttons; development notice                                | Pointer, keyboard, no-JS; shared configuration        |
+| R5  | Header right side in order: GitHub, star count when available, back to ggak.life, back to cozelsil.com                        | DOM order and navigation checks                       |
+| R6  | FAQ: local/remote access, tmux and DGL roles, downloads, platform development/verification status                             | Both languages; native details elements               |
 
 English `/`, Korean `/ko/`, explicit language switch near branding, same section hash on switch, no automatic language redirect. Header resources wrap on small screens. Desktop destination remains `https://github.com/jujinkim/dgl-client/releases` in configuration while disabled. Planned package ID `kim.jujin.dglc`; numeric Apple App Store ID undecided, never guessed.
 
@@ -64,3 +64,11 @@ The user confirmed the deployed site and requested larger small text, Get App fi
 - Shared rem-based sizes: 16px body, 17px lead, 14px controls/supporting text, 12px illustrative terminal at the default 16px root. Mobile retains these sizes; existing large heading sizes remain unchanged.
 - Both locales prominently name SSH + tmux + AI coding agents. Copy addresses users already running agents in tmux; tmux navigation becomes the first feature. Download availability and platform claims remain unchanged.
 - Verify check/build/unit/browser, responsive and enlarged text, heading order, navigation/no-JS and mobile performance. Push the verified commit to existing main, confirm remote synchronization, observe the existing Pages workflow, and inspect live EN/KO delivery separately.
+
+## Product clarification and instructional workflow — 2026-10-25
+
+The user's latest clarification supersedes the earlier SSH-first description and assumption that visitors already use tmux. DGL is a **tmux wrapper, session reconnector and manager**. SSH is an additional remote-access capability; standard tmux sessions can also be used directly from a local terminal. Attribute session persistence to tmux and navigation/reconnection/management to DGL. This does not add a new DGL local-terminal backend or change platform verification claims.
+
+- Section 01 teaches a concrete sequence: start tmux, run AI agents inside it, use DGL to navigate sessions/windows/panes, reconnect with DGL or attach directly from a local terminal.
+- Apply the same roles to both locales, hero, core line, features, FAQ, metadata and share card. The terminal illustration depicts a remote example, explicitly labeled as such.
+- Preserve Get App ordering, type sizes, section IDs, disabled downloads, public API behavior and publication architecture. Verify the final copy in built and rendered EN/KO pages, then use the existing authorized main-push release and live checks.

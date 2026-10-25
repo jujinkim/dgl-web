@@ -3,7 +3,7 @@
 Read affected criteria before changes; recheck against actual artifacts afterward. Evidence and limitations live in `task.md` and `docs/verification.md`. Local checks and public deployment checks are recorded separately.
 
 - [x] **Brand / R1:** DaGaLi Web, DaGaLi Client, DGL and exact `dDal gGak Life` in both locales. Check rendered text and metadata.
-- [x] **Content / R2–R3, R6:** Compare Client README/agent documentation; distinguish implementation, reported verification and release. No implied iOS release or ordinary-shell persistence.
+- [x] **Content / R2–R3, R6:** DGL is a tmux wrapper for session reconnection and management; SSH provides remote access, and standard tmux sessions remain directly usable from a local terminal. Section 01 teaches usage without assuming an existing setup. Compare Client README/agent documentation; distinguish implementation, reported verification and release. No implied iOS release or ordinary-shell persistence.
 - [x] **Downloads / R4:** One configuration owns three dim native disabled buttons and future destinations; Apple numeric ID null, package `kim.jujin.dglc`, Desktop Releases URL preserved. Exercise pointer and keyboard; no navigation with JS disabled.
 - [x] **Navigation / R1, R5:** Header resource order/destinations, explicit `/` ↔ `/ko/` switch near brand, matching section hash, anchors, direct routes and 404. No automatic language redirect.
 - [x] **Stars / R5:** Build-only public API; valid positive/zero counts render. HTTP/JSON/invalid data/network/timeout omit count, preserve GitHub, finish build. Browser makes no API requests.
