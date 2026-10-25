@@ -27,7 +27,7 @@
   align-items: center;
   gap: 2px;
   color: #71877a;
-  font: 11px var(--mono);
+  font: var(--text-small) var(--mono);
 }
 .languages a {
   padding: 12px 7px;
@@ -42,7 +42,7 @@
   gap: 20px;
   align-items: center;
   flex-wrap: wrap;
-  font: 11px var(--mono);
+  font: var(--text-small) var(--mono);
 }
 .header-resources a {
   min-height: 32px;
@@ -77,13 +77,16 @@
   gap: 60px;
   padding-block: 82px 70px;
 }
+.hero-copy {
+  min-width: 0;
+}
 .eyebrow {
   display: flex;
   align-items: center;
   gap: 9px;
   margin: 0 0 20px;
   color: var(--mint);
-  font: 11px/1.6 var(--mono);
+  font: var(--text-small)/1.6 var(--mono);
   letter-spacing: 1.1px;
 }
 .small-cross {
@@ -93,10 +96,11 @@
 .name-expansion {
   margin: 0 0 25px;
   color: var(--muted);
-  font: 12px var(--mono);
+  font: var(--text-small) var(--mono);
   letter-spacing: 0.8px;
 }
-h1 {
+.hero-title,
+.not-found h1 {
   margin: 0;
   font-size: clamp(38px, 4.5vw, 58px);
   font-weight: 560;
@@ -106,7 +110,7 @@ h1 {
 .app-name {
   display: block;
   margin-bottom: 16px;
-  font: 13px/1.6 var(--mono);
+  font: var(--text-small)/1.6 var(--mono);
   letter-spacing: 0;
   color: var(--text);
 }
@@ -120,7 +124,7 @@ h1 {
   max-width: 475px;
   margin: 26px 0;
   color: var(--muted);
-  font-size: 15px;
+  font-size: var(--text-lead);
   line-height: 1.9;
 }
 .hero-actions {
@@ -138,7 +142,7 @@ h1 {
   border: 1px solid transparent;
   border-radius: 5px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: var(--text-small);
   font-weight: 600;
   transition:
     box-shadow 0.16s,
@@ -171,7 +175,7 @@ h1 {
   gap: 8px;
   margin: 24px 0 0;
   color: #9aaba0;
-  font-size: 11px;
+  font-size: var(--text-small);
   line-height: 1.8;
   max-width: 440px;
 }
@@ -180,7 +184,7 @@ h1 {
   align-items: center;
   gap: 7px;
   color: var(--amber);
-  font: 11px/1.6 var(--mono);
+  font: var(--text-small)/1.6 var(--mono);
 }
 .status-dot {
   display: inline-block;
@@ -203,7 +207,7 @@ h1 {
   align-items: center;
   color: #b1c2b6;
   margin-bottom: 13px;
-  font: 10px/1.5 var(--mono);
+  font: var(--text-small)/1.5 var(--mono);
   letter-spacing: 1.1px;
 }
 .preview-label .small-cross {
@@ -222,6 +226,7 @@ h1 {
     0 20px 70px #0003,
     0 0 65px #7eed9d04;
   font-family: var(--mono);
+  overflow-wrap: anywhere;
 }
 .terminal-titlebar {
   height: 37px;
@@ -231,7 +236,7 @@ h1 {
   justify-content: space-between;
   border-bottom: 1px solid var(--line);
   color: #8da795;
-  font-size: 10px;
+  font-size: var(--text-terminal);
   background: #121e16;
 }
 .window-dots {
@@ -253,12 +258,12 @@ h1 {
   gap: 8px;
   padding: 13px 15px;
   border-bottom: 1px solid var(--line);
-  font-size: 10px;
+  font-size: var(--text-terminal);
   color: #bacdbf;
 }
 .terminal-protocol {
   margin-left: auto;
-  font-size: 9px;
+  font-size: var(--text-terminal);
   color: var(--mint);
   background: #a4f5c50a;
   padding: 1px 6px;
@@ -271,13 +276,14 @@ h1 {
   min-height: 252px;
 }
 .terminal-sidebar {
+  min-width: 0;
   padding-block: 17px;
   border-right: 1px solid var(--line);
-  font-size: 10px;
+  font-size: var(--text-terminal);
   color: #9caf9f;
 }
 .terminal-label {
-  font-size: 9px;
+  font-size: var(--text-terminal);
   letter-spacing: 1px;
   color: #7d9786;
   display: block;
@@ -289,14 +295,14 @@ h1 {
 }
 .tree-window {
   padding: 5px 14px;
-  font-size: 9px;
+  font-size: var(--text-terminal);
 }
 .tree-pane {
   display: flex;
   align-items: center;
   gap: 7px;
   padding: 6px 10px 6px 23px;
-  font-size: 9px;
+  font-size: var(--text-terminal);
   color: #7b9584;
 }
 .tree-pane.active {
@@ -314,7 +320,7 @@ h1 {
 }
 .terminal-panes {
   min-width: 0;
-  font-size: 10px;
+  font-size: var(--text-terminal);
   display: flex;
   flex-direction: column;
 }
@@ -324,7 +330,7 @@ h1 {
   justify-content: space-between;
   gap: 4px;
   color: #9eb8a7;
-  font-size: 9px;
+  font-size: var(--text-terminal);
 }
 .pane-badge {
   color: #7d9786;
@@ -375,17 +381,18 @@ h1 {
 }
 .terminal-statusline {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 5px;
   padding: 6px 13px;
   background: #17291e;
   color: #abcfb7;
-  font-size: 9px;
+  font-size: var(--text-terminal);
 }
 .preview figcaption {
   margin-top: 13px;
   color: #9bad9f;
-  font-size: 10px;
+  font-size: var(--text-small);
   line-height: 1.8;
   max-width: 440px;
 }
@@ -395,9 +402,11 @@ h1 {
   gap: 8px;
   margin-top: 17px;
   color: #97ad9f;
-  font: 9px var(--mono);
+  font: var(--text-small) var(--mono);
+  line-height: 1.6;
 }
 .route-line {
+  flex-shrink: 0;
   width: 24px;
   height: 1px;
   background: #6d9d7c;
@@ -410,7 +419,7 @@ h1 {
   padding-block: 17px;
   border-block: 1px solid var(--line);
   color: #71897a;
-  font: 11px/1.6 var(--mono);
+  font: var(--text-small)/1.6 var(--mono);
 }
 .section-nav a {
   padding-block: 5px;
@@ -446,7 +455,7 @@ h2 {
 }
 .section-intro {
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--text-body);
   line-height: 1.9;
   margin: 0;
   max-width: 650px;
@@ -490,16 +499,16 @@ h2 {
 }
 .flow-number {
   color: #8da395;
-  font: 10px var(--mono);
+  font: var(--text-small) var(--mono);
 }
 .flow-step h3 {
   margin: 0 0 6px;
-  font-size: 14px;
+  font-size: var(--text-body);
   font-weight: 550;
 }
 .flow-step p {
   margin: 0;
-  font-size: 11px;
+  font-size: var(--text-small);
   color: var(--muted);
 }
 .flow-arrow {
@@ -510,7 +519,7 @@ h2 {
   background: var(--bg);
   color: #9cb6a4;
   padding: 0 4px;
-  font: 12px var(--mono);
+  font: var(--text-small) var(--mono);
 }
 .flow-step:last-child .flow-arrow {
   display: none;
@@ -522,7 +531,7 @@ h2 {
   margin: 19px 0 0;
   color: #a1b0a6;
   max-width: 890px;
-  font-size: 11px;
+  font-size: var(--text-small);
   line-height: 1.9;
 }
 .workflow-note svg {
@@ -554,7 +563,7 @@ h2 {
 }
 .feature-index {
   color: #80998a;
-  font: 10px var(--mono);
+  font: var(--text-small) var(--mono);
 }
 .feature-card h3 {
   margin: 0 0 12px;
@@ -565,16 +574,16 @@ h2 {
 .feature-card p {
   margin: 0 0 25px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--text-body);
   line-height: 1.9;
 }
 .feature-tag {
   color: #96b6a1;
-  font: 9px/1.6 var(--mono);
+  font: var(--text-small)/1.6 var(--mono);
   letter-spacing: 0.7px;
 }
 .get-app-section {
-  padding-block: 67px;
+  padding-block: 40px;
 }
 .download-panel {
   padding: 34px;
@@ -587,12 +596,24 @@ h2 {
   align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
+  flex-wrap: wrap;
 }
 .download-heading .eyebrow {
   margin-bottom: 12px;
 }
-.download-heading h2 {
+.download-heading h1 {
+  margin: 0 0 17px;
   font-size: clamp(25px, 3vw, 32px);
+  font-weight: 520;
+  line-height: 1.3;
+  letter-spacing: -1.1px;
+}
+.workflow-stack {
+  margin: 0 0 14px;
+  color: var(--mint);
+  font-size: var(--text-lead);
+  font-weight: 600;
+  line-height: 1.6;
 }
 .development-badge {
   display: inline-flex;
@@ -601,7 +622,7 @@ h2 {
   padding: 5px 9px;
   border: 1px solid #e9bc7833;
   border-radius: 4px;
-  font: 9px/1.6 var(--mono);
+  font: var(--text-small)/1.6 var(--mono);
   color: var(--amber);
   white-space: nowrap;
 }
@@ -635,22 +656,25 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .download-button strong {
-  font-size: 13px;
+  font-size: var(--text-body);
   font-weight: 500;
 }
 .download-button span span {
-  font-size: 9px;
+  font-size: var(--text-small);
 }
 .download-button .download-dash {
+  flex-shrink: 0;
   margin-left: auto;
-  font-size: 12px;
+  font-size: var(--text-small);
 }
 .download-notice {
   color: var(--muted);
   margin: 13px 0 25px;
-  font-size: 11px;
+  font-size: var(--text-small);
   line-height: 1.8;
 }
 .download-bottom {
@@ -667,7 +691,7 @@ h2 {
   align-items: center;
   gap: 8px;
   color: var(--mint);
-  font-size: 12px;
+  font-size: var(--text-small);
   text-decoration: none;
 }
 .text-link:hover {
@@ -677,7 +701,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
-  font-size: 10px;
+  font-size: var(--text-small);
   color: #a6b7ab;
 }
 .package-id code {
@@ -694,7 +718,7 @@ h2 {
 }
 .source-note {
   color: #94aa9c;
-  font-size: 11px;
+  font-size: var(--text-small);
   line-height: 2;
   margin-top: 24px;
 }
@@ -716,7 +740,7 @@ h2 {
   cursor: pointer;
   padding: 20px 0;
   color: #d2ded6;
-  font-size: 13px;
+  font-size: var(--text-body);
   line-height: 1.8;
 }
 .faq-list summary::-webkit-details-marker {
@@ -734,7 +758,7 @@ details[open] .faq-plus {
 }
 .faq-list details p {
   margin: 0 26px 21px 0;
-  font-size: 12px;
+  font-size: var(--text-body);
   line-height: 2;
   color: var(--muted);
 }
@@ -747,14 +771,14 @@ details[open] .faq-plus {
   padding-block: 29px 38px;
 }
 .footer-brand {
-  font-size: 13px;
+  font-size: var(--text-small);
   gap: 8px;
 }
 .footer-brand svg {
   color: var(--mint);
 }
 .site-footer p {
-  font-size: 10px;
+  font-size: var(--text-small);
   color: #93a69a;
   margin: 6px 0 0;
 }
@@ -763,7 +787,7 @@ details[open] .faq-plus {
   color: #748e7e;
 }
 .back-to-top {
-  font: 10px/1.7 var(--mono);
+  font: var(--text-small)/1.7 var(--mono);
   color: var(--muted);
   text-decoration: none;
   white-space: nowrap;
@@ -772,7 +796,7 @@ details[open] .faq-plus {
 .back-to-top:hover {
   color: var(--mint);
 }
-:lang(ko) h1 {
+:lang(ko) .hero-title {
   font-size: clamp(36px, 3.9vw, 50px);
   line-height: 1.3;
   letter-spacing: -2px;
@@ -821,7 +845,6 @@ details[open] .faq-plus {
   }
   .terminal-lines {
     padding-inline: 10px;
-    font-size: 9px;
   }
   .flow-step {
     padding: 20px;
@@ -840,10 +863,11 @@ details[open] .faq-plus {
     gap: 40px;
     padding-block: 50px;
   }
-  h1 {
+  .hero-title,
+  .not-found h1 {
     font-size: 54px;
   }
-  :lang(ko) h1 {
+  :lang(ko) .hero-title {
     font-size: 48px;
   }
   .hero-body {
@@ -856,15 +880,14 @@ details[open] .faq-plus {
   .terminal-workspace {
     grid-template-columns: 140px 1fr;
   }
-  .terminal-lines,
-  .terminal-panes {
-    font-size: 11px;
-  }
   .section-nav {
     gap: 16px;
   }
   .section {
     padding-block: 58px;
+  }
+  .get-app-section {
+    padding-block: 32px;
   }
   .connection-flow {
     grid-template-columns: 1fr 1fr;
@@ -889,20 +912,13 @@ details[open] .faq-plus {
     padding: 25px;
   }
   .download-heading {
-    flex-direction: column-reverse;
-    gap: 20px;
+    gap: 12px;
   }
   .download-buttons {
     grid-template-columns: 1fr;
   }
   .download-button {
     padding: 17px 20px;
-  }
-  .download-button strong {
-    font-size: 15px;
-  }
-  .download-button span span {
-    font-size: 10px;
   }
   .faq-section {
     grid-template-columns: 1fr;
@@ -928,7 +944,6 @@ details[open] .faq-plus {
   .header-resources {
     width: 100%;
     gap: 2px 13px;
-    font-size: 9px;
   }
   .header-resources .back-link:last-child {
     margin-left: auto;
@@ -948,27 +963,23 @@ details[open] .faq-plus {
     padding-block: 37px 35px;
     gap: 32px;
   }
-  .eyebrow {
-    font-size: 10px;
-  }
   .name-expansion {
     margin-bottom: 22px;
   }
-  h1 {
+  .hero-title,
+  .not-found h1 {
     font-size: 43px;
     letter-spacing: -1.8px;
   }
-  :lang(ko) h1 {
+  :lang(ko) .hero-title {
     font-size: 36px;
     letter-spacing: -1.8px;
   }
   .hero-body {
-    font-size: 14px;
     margin-block: 20px;
   }
   .button {
     padding-inline: 13px;
-    font-size: 11px;
   }
   .development-note {
     margin-top: 19px;
@@ -977,14 +988,10 @@ details[open] .faq-plus {
     grid-template-columns: 97px 1fr;
     min-height: 250px;
   }
-  .terminal-sidebar {
-    font-size: 9px;
-  }
   .tree-session {
     padding-inline: 6px;
   }
   .tree-window {
-    font-size: 8px;
     padding-inline: 8px;
   }
   .tree-pane {
@@ -994,24 +1001,15 @@ details[open] .faq-plus {
   .tree-pane.active {
     padding-left: 10px;
   }
-  .terminal-lines,
-  .terminal-panes {
-    font-size: 8px;
-  }
   .pane-top,
   .pane-lower {
     padding-inline: 9px;
-    font-size: 8px;
   }
   .terminal-lines {
     padding-inline: 9px;
   }
-  .preview figcaption {
-    font-size: 10px;
-  }
   .section-nav {
     gap: 12px;
-    font-size: 10px;
     padding-block: 12px;
   }
   .nav-prefix {
@@ -1020,12 +1018,12 @@ details[open] .faq-plus {
   .section {
     padding-block: 45px;
   }
+  .get-app-section {
+    padding-block: 24px;
+  }
   h2 {
     font-size: 26px;
     letter-spacing: -0.7px;
-  }
-  .section-intro {
-    font-size: 13px;
   }
   .section-heading {
     margin-bottom: 25px;
@@ -1033,17 +1031,10 @@ details[open] .faq-plus {
   .flow-step {
     padding: 18px 15px;
   }
-  .flow-step h3 {
-    font-size: 12px;
-  }
-  .flow-step p {
-    font-size: 10px;
-  }
   .flow-top {
     margin-bottom: 15px;
   }
   .workflow-note {
-    font-size: 11px;
     gap: 9px;
   }
   .feature-grid {
@@ -1065,11 +1056,8 @@ details[open] .faq-plus {
   .download-panel {
     padding: 23px 20px;
   }
-  .download-heading h2 {
+  .download-heading h1 {
     font-size: 26px;
-  }
-  .download-panel .section-intro {
-    font-size: 12px;
   }
   .download-buttons {
     gap: 9px;
@@ -1078,19 +1066,10 @@ details[open] .faq-plus {
   .download-bottom {
     gap: 14px;
   }
-  .package-id {
-    font-size: 9px;
-  }
-  .faq-list summary {
-    font-size: 12px;
-  }
   .site-footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
     padding-block: 24px;
-  }
-  .site-footer p {
-    font-size: 9px;
   }
 }

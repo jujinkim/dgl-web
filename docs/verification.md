@@ -105,3 +105,26 @@ Read-only HTTPS/browser verification completed **2026-10-25 10:53:17 UTC** at [d
 | Discovery/error paths | Sitemap and robots HTTP 200; unknown URL HTTP 404 with custom page and noindex                       |
 
 Ignored evidence files: `artifacts/live/verification.json`, `artifacts/live/en-360.png`, `artifacts/live/ko-360.png`. The subsequent documentation commit records this successful release and, under the approved main-push policy, runs the same publishing workflow again. Final run status and remote SHA are checked before handoff; its product source is unchanged.
+
+## Landing revision verification — 2026-10-25
+
+User-approved revision puts Get App immediately below the header, increases small text, and emphasizes SSH + tmux + AI coding agents in both languages. The single h1 is now the Get App product heading. The hero remains the same visual size as an h2, section IDs remain valid, Get App leads navigation/actions, and top links target main. tmux navigation is the first feature. Existing disabled downloads, release caveats, external destinations and architecture are preserved.
+
+Verified with temporary Node **24.22.1** and the existing Chromium 156 tooling:
+
+| Check                           | Actual result                                                                                                                                              |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Astro/TypeScript and formatting | 0 errors/warnings/hints; Prettier passed                                                                                                                   |
+| Build and unit tests            | Static EN/KO/404 and assets built; 13/13 unit tests passed                                                                                                 |
+| Existing browser acceptance     | 35/35 passed, including no-JS, reduced motion, keyboard, locale fragments, short screens, reflow and 200% enlarged text                                    |
+| axe WCAG 2.2 AA tags            | 0 violations at 360/768/1440px in both locales                                                                                                             |
+| Computed type sizes             | Body 16px, hero lead 17px, supporting text 14px, terminal 12px at every inspected breakpoint; rem-based sizes retain user scaling                          |
+| Large hero titles               | EN 58px desktop/43px mobile; KO 50px desktop/36px mobile, unchanged                                                                                        |
+| Additional rendered review      | Both locales at 320×740, 360×800, 768×1024, 1440×900 and 844×390: first Get App, core combination, prioritized links, tmux feature, no horizontal overflow |
+| Navigation and downloads        | Actual language and top-link clicks passed; both locales retain native disabled controls and usable FAQ without JS                                         |
+| Local assets/network            | CSS/favicon/share PNG bytes match dist; no page errors or third-party browser requests; generated CNAME is correct                                         |
+| Mobile Lighthouse               | EN/KO three runs each: Performance 100, accessibility 100, best practices 100, SEO 100, CLS 0; LCP 902–904ms, no run warnings                              |
+
+Local Lighthouse used 360×800 emulation, simulated 150ms RTT/1638.4 Kbps throughput/4× CPU throttling at `http://127.0.0.1:35181/` and `/ko/`. Reports are in ignored `artifacts/performance/`. Revision browser evidence and EN/KO desktop/mobile captures are in ignored `artifacts/revision/local/`.
+
+These results precede the authorized push. The existing Pages workflow and public HTTPS/browser delivery are checked separately afterward, with deployed SHA/run URL in ignored `artifacts/revision/release.json` and actual live evidence in `artifacts/revision/live/verification.json`. Local results do not prove public delivery, real-device usability, other browsers, screen-reader conformance or field performance. No Client application release or platform-state change is included.

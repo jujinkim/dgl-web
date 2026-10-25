@@ -3,6 +3,7 @@ import type { Language } from './site';
 interface Content {
   title: string;
   description: string;
+  workflowStack: string;
   nav: {
     label: string;
     workflow: string;
@@ -13,7 +14,6 @@ interface Content {
     stars: string;
   };
   hero: {
-    eyebrow: string;
     title: string;
     emphasis: string;
     body: string;
@@ -69,6 +69,7 @@ export const content: Record<Language, Content> = {
     title: 'DaGaLi Client — SSH, tmux & your AI agents | DaGaLi Web',
     description:
       'Meet DaGaLi Client (DGL): a development-stage SSH client for tmux and AI coding agents on your personal server. Explore features and platform progress.',
+    workflowStack: 'SSH + tmux + AI coding agents',
     nav: {
       label: 'On this page',
       workflow: 'How it works',
@@ -79,10 +80,9 @@ export const content: Record<Language, Content> = {
       stars: 'GitHub stars. Snapshot at build time; not a live count.',
     },
     hero: {
-      eyebrow: 'YOUR SERVER. YOUR WORKFLOW.',
       title: 'Step away.',
       emphasis: 'Keep your place.',
-      body: 'An SSH client for the AI coding workflow on your personal server. Find your tmux sessions, move between panes, and return to the work you left running.',
+      body: 'Already running AI coding agents in tmux? Connect over SSH, find your sessions and panes, and pick up the work on your personal server.',
       github: 'Explore on GitHub',
       getApp: 'Get App',
       status: 'In development',
@@ -96,36 +96,36 @@ export const content: Record<Language, Content> = {
       session: 'dev session',
       agent: 'AI agent',
       output: 'Your work lives here.',
-      footer: 'SSH → tmux → your workspace',
+      footer: 'SSH → tmux → AI coding agents',
     },
     workflow: {
-      eyebrow: '01 / THE CONNECTION',
-      title: 'Your server is the workspace.',
-      body: 'DaGaLi Client gives you a way back into it. Keep the CLI tools and tmux sessions you already use.',
+      eyebrow: '02 / THE CONNECTION',
+      title: 'SSH in. Return to tmux.',
+      body: 'Your AI coding agents are already running in tmux. DaGaLi Client brings you back to the sessions, windows and panes you use on your server.',
       steps: [
         { title: 'Personal server', detail: 'The machine you manage' },
         { title: 'SSH', detail: 'Connect with your account' },
         { title: 'tmux', detail: 'Sessions, windows & panes' },
-        { title: 'AI agent', detail: 'Your CLI, on your server' },
+        { title: 'AI coding agents', detail: 'Your CLI, on your server' },
       ],
       note: 'Disconnecting the client leaves a running tmux session on the server. Reconnect to that session to continue. An ordinary SSH shell may not preserve work after disconnection.',
     },
     features: {
-      eyebrow: '02 / LESS FRICTION',
+      eyebrow: '03 / LESS FRICTION',
       title: 'Keep the CLI. Simplify the way in.',
       body: 'Built around the moments between connecting, finding a session, and getting back to work. Features below are implemented in the development candidate; platform verification varies.',
       items: [
+        {
+          icon: 'tree',
+          title: 'Your tmux sessions and panes',
+          body: 'Browse a session → window → pane tree. Select a target, split a tmux pane, or move focus without remembering every command.',
+          tag: 'TMUX NAVIGATION',
+        },
         {
           icon: 'server',
           title: 'Your hosts, together',
           body: 'Save hosts, aliases and favorites. Recent connections and independent tabs keep your servers within reach.',
           tag: 'HOST MANAGEMENT',
-        },
-        {
-          icon: 'tree',
-          title: 'Find the right pane',
-          body: 'Browse a session → window → pane tree. Select a target, split a tmux pane, or move focus without remembering every command.',
-          tag: 'TMUX NAVIGATION',
         },
         {
           icon: 'layout',
@@ -148,9 +148,9 @@ export const content: Record<Language, Content> = {
       ],
     },
     getApp: {
-      eyebrow: '03 / GET APP',
-      title: 'Taking shape. Not shipping yet.',
-      body: 'DaGaLi Client is a development candidate. Public downloads are not ready, and every download button below is disabled.',
+      eyebrow: '01 / GET APP',
+      title: 'Get DaGaLi Client',
+      body: 'DaGaLi Client is in development. Public downloads are not available yet.',
       status: 'IN DEVELOPMENT',
       unavailable: 'Not available yet',
       notice:
@@ -200,6 +200,7 @@ export const content: Record<Language, Content> = {
     title: 'DaGaLi Client — SSH, tmux, 나의 AI 에이전트 | DaGaLi Web',
     description:
       '개인 서버의 tmux와 AI 코딩 에이전트를 위한 개발 중인 SSH 클라이언트, DaGaLi Client(DGL). 주요 기능과 플랫폼별 개발 상태를 확인하세요.',
+    workflowStack: 'SSH + tmux + AI coding agents',
     nav: {
       label: '페이지 탐색',
       workflow: '사용 흐름',
@@ -210,10 +211,9 @@ export const content: Record<Language, Content> = {
       stars: 'GitHub Star 수. 빌드 시점 기준이며 실시간 수치가 아닙니다.',
     },
     hero: {
-      eyebrow: '나의 서버. 나의 작업 방식.',
       title: '자리는 바뀌어도,',
       emphasis: '작업은 이어지게.',
-      body: '개인 서버에서 AI 코딩 에이전트를 쓰는 사람을 위한 SSH 클라이언트. tmux 세션을 찾고, 패널을 오가고, 서버에 남겨 둔 작업으로 돌아오세요.',
+      body: 'tmux에서 실행 중인 AI 코딩 에이전트에 SSH로 다시 연결하세요. 세션·창·패널을 찾아 서버에 남겨 둔 작업을 이어갑니다.',
       github: 'GitHub에서 살펴보기',
       getApp: 'Get App',
       status: '개발 중',
@@ -227,36 +227,36 @@ export const content: Record<Language, Content> = {
       session: 'dev 세션',
       agent: 'AI agent',
       output: '작업은 이곳에 남아 있습니다.',
-      footer: 'SSH → tmux → 나의 작업 공간',
+      footer: 'SSH → tmux → AI coding agents',
     },
     workflow: {
-      eyebrow: '01 / 연결 흐름',
-      title: '작업 공간은 나의 서버에.',
-      body: 'DaGaLi Client는 그곳으로 돌아가는 길입니다. 익숙한 CLI 도구와 tmux 세션을 그대로 사용하세요.',
+      eyebrow: '02 / 연결 흐름',
+      title: 'SSH로 연결해, tmux 작업으로.',
+      body: '이미 tmux에서 실행 중인 AI 코딩 에이전트. DaGaLi Client로 서버의 익숙한 세션·창·패널에 돌아오세요.',
       steps: [
         { title: '개인 서버', detail: '직접 관리하는 작업 공간' },
         { title: 'SSH', detail: '내 계정으로 연결' },
         { title: 'tmux', detail: '세션 · 창 · 패널 관리' },
-        { title: 'AI agent', detail: '서버에서 실행하는 CLI' },
+        { title: 'AI 코딩 에이전트', detail: '서버에서 실행하는 CLI' },
       ],
       note: '클라이언트 연결을 닫아도 실행 중인 tmux 세션은 서버에 남습니다. 같은 세션에 다시 연결해 이어가세요. 일반 SSH 셸의 작업은 연결 종료 후 보존되지 않을 수 있습니다.',
     },
     features: {
-      eyebrow: '02 / 주요 기능',
+      eyebrow: '03 / 주요 기능',
       title: 'CLI는 그대로. 진입은 더 편하게.',
       body: '서버 연결부터 원하는 세션을 찾아 다시 작업하기까지. 아래 기능은 개발용 후보에 구현되어 있으며, 플랫폼별 실제 검증 범위는 다릅니다.',
       items: [
+        {
+          icon: 'tree',
+          title: 'tmux 세션부터 원하는 패널까지',
+          body: '세션 → 창 → 패널 트리를 탐색하세요. 명령을 모두 외우지 않아도 대상을 고르고 tmux 패널을 나누거나 포커스를 옮깁니다.',
+          tag: 'TMUX 탐색',
+        },
         {
           icon: 'server',
           title: '내 서버를 한곳에',
           body: '호스트, 별칭, 즐겨찾기를 저장하세요. 최근 접속과 독립된 여러 연결로 필요한 서버를 빠르게 찾습니다.',
           tag: '호스트 관리',
-        },
-        {
-          icon: 'tree',
-          title: '원하는 패널까지',
-          body: '세션 → 창 → 패널 트리를 탐색하세요. 명령을 모두 외우지 않아도 대상을 고르고 tmux 패널을 나누거나 포커스를 옮깁니다.',
-          tag: 'TMUX 탐색',
         },
         {
           icon: 'layout',
@@ -279,9 +279,9 @@ export const content: Record<Language, Content> = {
       ],
     },
     getApp: {
-      eyebrow: '03 / GET APP',
-      title: '만드는 중입니다. 출시는 아직.',
-      body: 'DaGaLi Client는 개발용 후보입니다. 공개 다운로드는 준비 중이며, 아래 다운로드 버튼은 모두 비활성 상태입니다.',
+      eyebrow: '01 / GET APP',
+      title: 'DaGaLi Client 받기',
+      body: 'DaGaLi Client는 개발 중입니다. 공개 다운로드는 아직 준비 중입니다.',
       status: '개발 중',
       unavailable: '아직 다운로드할 수 없습니다',
       notice:

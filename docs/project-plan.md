@@ -55,3 +55,12 @@ Initially prepared a manual-dispatch Pages workflow. The user subsequently appro
 - [Astro GitHub Pages guide](https://docs.astro.build/en/guides/deploy/github/), read 2026-10-25.
 
 Source status: development candidate. Android 14–16 emulator validation; physical devices/network changes remain unverified. macOS ARM64 build/core SSH/tmux checked, actual GUI/Keychain acceptance pending. Windows x64 build/packaging path exists, native build/device acceptance pending. Linux future target; iOS not confirmed. tmux Control Mode range 3.3–3.7, actual 3.3a/3.7c server checks. Optional hooks have service/event-specific evidence, not general success guarantees. These are upstream-reported results, not app tests performed by this website task.
+
+## Approved landing revision — 2026-10-25
+
+The user confirmed the deployed site and requested larger small text, Get App first, stronger SSH + tmux + AI coding agents positioning, and push after verification. In planning, the user selected Get App immediately after the header, before the hero, then approved implementation.
+
+- Order: header → Get App → hero → workflow → features → FAQ. Get App leads section navigation and hero actions. Its product heading is the single h1; the hero becomes h2 with its existing visual size. Existing section IDs and locale routes remain valid; footer top links return to main.
+- Shared rem-based sizes: 16px body, 17px lead, 14px controls/supporting text, 12px illustrative terminal at the default 16px root. Mobile retains these sizes; existing large heading sizes remain unchanged.
+- Both locales prominently name SSH + tmux + AI coding agents. Copy addresses users already running agents in tmux; tmux navigation becomes the first feature. Download availability and platform claims remain unchanged.
+- Verify check/build/unit/browser, responsive and enlarged text, heading order, navigation/no-JS and mobile performance. Push the verified commit to existing main, confirm remote synchronization, observe the existing Pages workflow, and inspect live EN/KO delivery separately.
