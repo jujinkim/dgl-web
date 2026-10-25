@@ -10,14 +10,14 @@ The user owns and approved branding, English/Korean routes, restrained terminal 
 
 ## Requirements and acceptance
 
-| ID | Approved behavior | Evidence |
-| --- | --- | --- |
-| R1 | App name, exact name expansion, value, explicitly illustrative terminal; GitHub and Get App anchors | Both languages, browser and no-JS checks |
-| R2 | Personal server → SSH → tmux → AI agent diagram; return to surviving server-side sessions | Source review and static diagram |
-| R3 | Host management, session/window/pane navigation, desktop splits, Android input helpers, optional agent status integration | Reviewed Client README and agent-status documentation |
-| R4 | Three dim, native disabled Apple App Store / Google Play / Desktop buttons; development notice | Pointer, keyboard, no-JS; shared configuration |
-| R5 | Header right side in order: GitHub, star count when available, back to ggak.life, back to cozelsil.com | DOM order and navigation checks |
-| R6 | FAQ: server prerequisites, tmux role, downloads, platform development/verification status | Both languages; native details elements |
+| ID  | Approved behavior                                                                                                         | Evidence                                              |
+| --- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| R1  | App name, exact name expansion, value, explicitly illustrative terminal; GitHub and Get App anchors                       | Both languages, browser and no-JS checks              |
+| R2  | Personal server → SSH → tmux → AI agent diagram; return to surviving server-side sessions                                 | Source review and static diagram                      |
+| R3  | Host management, session/window/pane navigation, desktop splits, Android input helpers, optional agent status integration | Reviewed Client README and agent-status documentation |
+| R4  | Three dim, native disabled Apple App Store / Google Play / Desktop buttons; development notice                            | Pointer, keyboard, no-JS; shared configuration        |
+| R5  | Header right side in order: GitHub, star count when available, back to ggak.life, back to cozelsil.com                    | DOM order and navigation checks                       |
+| R6  | FAQ: server prerequisites, tmux role, downloads, platform development/verification status                                 | Both languages; native details elements               |
 
 English `/`, Korean `/ko/`, explicit language switch near branding, same section hash on switch, no automatic language redirect. Header resources wrap on small screens. Desktop destination remains `https://github.com/jujinkim/dgl-client/releases` in configuration while disabled. Planned package ID `kim.jujin.dglc`; numeric Apple App Store ID undecided, never guessed.
 
@@ -25,7 +25,7 @@ No sign-up, web SSH terminal, app distribution backend, DB, login, credentials c
 
 ## Design and architecture
 
-Charcoal background, mint accent, restrained amber status, fine borders and generous spacing. System monospace for terminal; system sans-serif for Korean/body. Desktop hero pairs copy and preview; mobile stacks them. Preview is illustrative, not an app screenshot or live connection. CSS connection sequence and brief pane transition run once; reduced motion is static. Focus/hover use subtle light without heavy animation dependencies.
+Charcoal background, mint accent, restrained amber status, fine borders and generous spacing. System monospace for terminal; system sans-serif for Korean/body. Desktop hero pairs copy and preview; mobile stacks them. Preview is illustrative, not an app screenshot or live connection. CSS connection sequence and brief pane transition run once; reduced motion is static. A sticky header keeps the locale switch reachable while reading, and measured scroll padding prevents anchor/focus targets from being covered. Bottom-of-page detection retains the FAQ section even when it cannot align with the viewport top. Focus/hover use subtle light without heavy animation dependencies.
 
 Astro static output with shared localized content structure, common layouts/components, separate CSS and minimal TypeScript for language hashes. Download state and destinations have one configuration owner. Source text is reviewed and saved, never copied from upstream at each build. Locale metadata, canonical/hreflang, share image, sitemap, robots and 404 included.
 

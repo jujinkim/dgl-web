@@ -10,7 +10,8 @@ export const site = {
 } as const;
 
 export type Language = 'en' | 'ko';
-export const localePath = (language: Language) => language === 'ko' ? '/ko/' : '/';
+export const localePath = (language: Language) =>
+  language === 'ko' ? '/ko/' : '/';
 
 type Download = {
   id: 'apple' | 'google' | 'desktop';
@@ -22,7 +23,22 @@ type Download = {
 // Release requires explicit configuration, copy review and corresponding test updates.
 // No numeric Apple App Store ID has been assigned; never synthesize one.
 export const downloads: readonly Download[] = [
-  { id: 'apple', label: 'Apple App Store', available: false, destination: null },
-  { id: 'google', label: 'Google Play', available: false, destination: `https://play.google.com/store/apps/details?id=${site.packageId}` },
-  { id: 'desktop', label: 'Desktop', available: false, destination: `${site.repository}/releases` },
+  {
+    id: 'apple',
+    label: 'Apple App Store',
+    available: false,
+    destination: null,
+  },
+  {
+    id: 'google',
+    label: 'Google Play',
+    available: false,
+    destination: `https://play.google.com/store/apps/details?id=${site.packageId}`,
+  },
+  {
+    id: 'desktop',
+    label: 'Desktop',
+    available: false,
+    destination: `${site.repository}/releases`,
+  },
 ];

@@ -1,10 +1,16 @@
 ---
 import { site, type Language, localePath } from '../data/site';
 import '../styles/global.css';
-interface Props { language: Language; title: string; description: string; noindex?: boolean }
+interface Props {
+  language: Language;
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
 const { language, title, description, noindex = false } = Astro.props;
 const canonical = new URL(localePath(language), site.origin);
 ---
+
 <!doctype html>
 <html lang={language}>
   <head>
@@ -13,28 +19,46 @@ const canonical = new URL(localePath(language), site.origin);
     <meta name="theme-color" content="#0a100e" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    {noindex ? <meta name="robots" content="noindex" /> : <>
-      <link rel="canonical" href={canonical} />
-      <link rel="alternate" hreflang="en" href={`${site.origin}/`} />
-      <link rel="alternate" hreflang="ko" href={`${site.origin}/ko/`} />
-      <link rel="alternate" hreflang="x-default" href={`${site.origin}/`} />
-    </>}
+    {noindex ? (
+      <meta name="robots" content="noindex" />
+    ) : (
+      <>
+        <link rel="canonical" href={canonical} />
+        <link rel="alternate" hreflang="en" href={`${site.origin}/`} />
+        <link rel="alternate" hreflang="ko" href={`${site.origin}/ko/`} />
+        <link rel="alternate" hreflang="x-default" href={`${site.origin}/`} />
+      </>
+    )}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:locale" content={language === 'ko' ? 'ko_KR' : 'en_US'} />
-    <meta property="og:locale:alternate" content={language === 'ko' ? 'en_US' : 'ko_KR'} />
-    <meta property="og:url" content={new URL(Astro.url.pathname, site.origin)} />
+    <meta
+      property="og:locale"
+      content={language === 'ko' ? 'ko_KR' : 'en_US'}
+    />
+    <meta
+      property="og:locale:alternate"
+      content={language === 'ko' ? 'en_US' : 'ko_KR'}
+    />
+    <meta
+      property="og:url"
+      content={new URL(Astro.url.pathname, site.origin)}
+    />
     <meta property="og:image" content={`${site.origin}/social-card.png`} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="DaGaLi Client — dDal gGak Life. SSH, tmux, AI agents." />
+    <meta
+      property="og:image:alt"
+      content="DaGaLi Client — dDal gGak Life. SSH, tmux, AI agents."
+    />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
-    <a class="skip-link" href="#main">{language === 'ko' ? '본문으로 이동' : 'Skip to content'}</a>
+    <a class="skip-link" href="#main">
+      {language === 'ko' ? '본문으로 이동' : 'Skip to content'}
+    </a>
     <slot />
   </body>
 </html>

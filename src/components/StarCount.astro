@@ -1,8 +1,21 @@
 ---
 import { site, type Language } from '../data/site';
 import { content } from '../data/content';
-interface Props { count: number | null; language: Language }
+interface Props {
+  count: number | null;
+  language: Language;
+}
 const { count, language } = Astro.props;
 const label = content[language].nav.stars;
 ---
-{count !== null && <a class="star-count" href={`${site.repository}/stargazers`} title={label} aria-label={`${count} ${label}`}><span aria-hidden="true">☆</span> {count.toLocaleString(language)}</a>}
+
+{count !== null && (
+  <a
+    class="star-count"
+    href={`${site.repository}/stargazers`}
+    title={label}
+    aria-label={`${count} ${label}`}
+  >
+    <span aria-hidden="true">☆</span> {count.toLocaleString(language)}
+  </a>
+)}
