@@ -90,3 +90,12 @@ Implementation and local acceptance are complete. Authorized release recovery co
 - User approved the finalized bilingual reconnection message for the hero. Updated only `hero.body` in EN/KO: DGL handles SSH reconnection and tmux reattachment so users can resume their work. Exact approved text and validation are recorded in `docs/verification.md`.
 - Node 24.22.1 check/format/build passed; unit tests 13/13, existing Chromium tests 35/35. EN/KO rendered checks at 360/1440px verified exact copy, existing font sizes, no overflow, no-JS and disabled controls; hero captures visually inspected. No new Lighthouse run for this text-only change.
 - Existing authorized main-push publication and independent live evidence use ignored `artifacts/hero-copy/release.json` and `artifacts/hero-copy/live/verification.json`; local evidence is in `artifacts/hero-copy/local/`.
+
+## Actual app hero screenshot — 2026-10-28
+
+- Pulled the user's screenshot commit `e23f5c9` with a fast-forward. Renamed `public/image.png` to `public/images/dagali-client-desktop.png`; original 1280×698 PNG bytes are preserved.
+- Replaced the illustrative terminal with `AppPreview.astro`, responsive sizing, explicit image dimensions and eager loading. Updated EN/KO labels, captions and alternative text; removed obsolete illustration styles and updated existing browser selectors.
+- Temporary Node 22.23.4: check/format/build passed with 0 errors/warnings/hints; unit tests 13/13 and Chromium browser checks 35/35 passed, including axe, reduced motion, no-JS, reflow and 200% text.
+- Additional EN/KO desktop/mobile review verified image decoding, original aspect ratio, alternative text, no horizontal overflow and served PNG bytes matching the source. Hero captures in ignored `artifacts/hero/` were visually inspected.
+- Mobile Lighthouse, three runs per locale: Performance 97, Accessibility/Best Practices/SEO 100, CLS 0, LCP 2552–2555ms. Reports remain in ignored `artifacts/performance/`.
+- User explicitly requested push completion. Publish through the existing main-push workflow and verify remote synchronization, Actions deployment and live EN/KO screenshot responses before handoff. Release evidence uses ignored `artifacts/hero/release.json` and `artifacts/hero/live.json`.

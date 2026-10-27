@@ -5,7 +5,7 @@ import { content } from '../data/content';
 import { getStarSnapshot } from '../lib/stars';
 import Header from './Header.astro';
 import Icon from './Icon.astro';
-import TerminalPreview from './TerminalPreview.astro';
+import AppPreview from './AppPreview.astro';
 interface Props {
   language: Language;
 }
@@ -84,7 +84,7 @@ const downloadIcons = { apple: 'store', google: 'play', desktop: 'desktop' };
           <span>{t.hero.note}</span>
         </p>
       </div>
-      <TerminalPreview language={language} />
+      <AppPreview language={language} />
     </section>
     <nav class="section-nav container" aria-label={t.nav.label}>
       <span class="nav-prefix" aria-hidden="true">

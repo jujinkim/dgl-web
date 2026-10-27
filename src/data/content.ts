@@ -25,10 +25,7 @@ interface Content {
   preview: {
     label: string;
     caption: string;
-    host: string;
-    session: string;
-    agent: string;
-    output: string;
+    alt: string;
     footer: string;
   };
   workflow: {
@@ -84,13 +81,10 @@ export const content: Record<Language, Content> = {
       note: 'Work continues while the machine, tmux session and processes stay running. Downloads are not available yet.',
     },
     preview: {
-      label: 'ILLUSTRATIVE EXAMPLE',
+      label: 'APP SCREENSHOT',
       caption:
-        'An illustrative remote tmux workflow. Not an app screenshot or a live SSH connection.',
-      host: 'personal-server',
-      session: 'dev session',
-      agent: 'AI agent',
-      output: 'Your work lives here.',
+        'DaGaLi Client desktop app with a session list and side-by-side terminals.',
+      alt: 'DaGaLi Client desktop app showing tmux sessions in the sidebar and Codex and Claude Code terminals side by side.',
       footer: 'Standard tmux · local terminal or remote SSH',
     },
     workflow: {
@@ -210,13 +204,10 @@ export const content: Record<Language, Content> = {
       note: '작업을 실행한 컴퓨터와 tmux 세션·프로세스가 살아 있는 동안 작업을 이어갈 수 있습니다. 다운로드는 아직 준비 중입니다.',
     },
     preview: {
-      label: '설명용 예시',
+      label: '실제 앱 화면',
       caption:
-        'SSH로 접속하는 경우의 설명용 예시입니다. 실제 앱 화면이나 실시간 SSH 연결이 아닙니다.',
-      host: 'personal-server',
-      session: 'dev 세션',
-      agent: 'AI agent',
-      output: '작업은 이곳에 남아 있습니다.',
+        '세션 목록과 나란히 배치된 터미널을 보여 주는 DaGaLi Client 데스크톱 앱 화면입니다.',
+      alt: '사이드바의 tmux 세션 목록과 나란히 열린 Codex·Claude Code 터미널을 보여 주는 DaGaLi Client 데스크톱 앱.',
       footer: '표준 tmux · 로컬 터미널 또는 원격 SSH',
     },
     workflow: {

@@ -162,3 +162,13 @@ Replaced only the EN/KO hero body with the user's approved SSH reconnection and 
 Node 24.22.1 check/format/build passed with 0 errors/warnings/hints; existing unit tests **13/13** and Chromium browser checks **35/35** passed, including axe, no-JS, disabled downloads, locale anchors, reflow and 200% text. Additional EN/KO rendered checks at 360×800 and 1440×900 confirmed exact hero text, preserved sizes, no overflow or page errors and served assets matching the build. Mobile/desktop hero captures were visually inspected. Lighthouse was not rerun for this text-only change.
 
 Evidence uses ignored `artifacts/hero-copy/local/`, `artifacts/hero-copy/release.json` and `artifacts/hero-copy/live/verification.json`; live checks follow the existing authorized main-push Pages deployment independently from local results.
+
+## Actual app hero screenshot — 2026-10-28
+
+The user's `public/image.png` from commit `e23f5c9` is now `public/images/dagali-client-desktop.png`. The 1280×698 PNG is unchanged. Both locale heroes render the actual desktop screenshot, with localized labels, captions and alternative text, explicit dimensions, eager loading and responsive sizing that preserves the complete image.
+
+- Temporary Node 22.23.4: Astro/TypeScript 0 errors/warnings/hints; formatting and build passed; existing unit tests **13/13** and Chromium browser checks **35/35** passed. Coverage includes axe at 360/768/1440px, reduced motion, no-JS, disabled downloads, locale anchors, reflow and 200% text.
+- Additional EN/KO checks at 1440×1000 and 360×800 verified image decoding at its original dimensions, aspect ratio, alternative text, no horizontal overflow and served PNG bytes matching the source. Four hero captures in ignored `artifacts/hero/` were visually inspected.
+- Local mobile Lighthouse, three runs per language: Performance **97**, Accessibility/Best Practices/SEO **100**, **CLS 0**, LCP **2552–2555ms**. Reports remain in ignored `artifacts/performance/`. These measurements apply to local Chromium, not field traffic or physical devices.
+
+Publication follows the user's explicit push request through the existing main-push Pages workflow. Deployment and live screenshot verification are checked separately from these local results, with evidence in ignored `artifacts/hero/release.json` and `artifacts/hero/live.json`.

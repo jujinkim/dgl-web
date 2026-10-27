@@ -1,0 +1,36 @@
+---
+import type { Language } from '../data/site';
+import { content } from '../data/content';
+interface Props {
+  language: Language;
+}
+const { language } = Astro.props;
+const t = content[language].preview;
+---
+
+<figure class="preview" aria-labelledby="preview-caption">
+  <div class="preview-label">
+    <span class="small-cross" aria-hidden="true">
+      +
+    </span>
+    {t.label}
+    <span class="preview-number" aria-hidden="true">
+      FIG. 01
+    </span>
+  </div>
+  <img
+    class="app-screenshot"
+    src="/images/dagali-client-desktop.png"
+    alt={t.alt}
+    width="1280"
+    height="698"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  />
+  <figcaption id="preview-caption">{t.caption}</figcaption>
+  <div class="preview-route" aria-hidden="true">
+    <span class="route-line"></span>
+    {t.footer}
+  </div>
+</figure>

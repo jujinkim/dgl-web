@@ -9,7 +9,7 @@ Read affected criteria before changes; recheck against actual artifacts afterwar
 - [x] **Stars / R5:** Build-only public API; valid positive/zero counts render. HTTP/JSON/invalid data/network/timeout omit count, preserve GitHub, finish build. Browser makes no API requests.
 - [x] **Architecture:** Astro static output; localized shared shape, layout/components/styles split, no backend/DB/login/credential collection/analytics. Check/build and inspect output/dependencies.
 - [x] **Accessibility:** Keyboard/visible focus/heading order/text alternatives/contrast, FAQ and landmarks; WCAG 2.2 AA target. Automated axe and manual browser checks; no unverified compliance claim.
-- [x] **Motion:** Connection and pane effects run once; reduced-motion static. Inspect computed animation, hash scroll and hover/focus behavior.
+- [x] **Motion:** Connection effects run once; the app screenshot stays static and reduced-motion disables animation. Inspect computed animation, hash scroll and hover/focus behavior.
 - [x] **Responsive:** 360px mobile, tablet, desktop, short viewport and enlarged text/zoom. Check horizontal overflow, text/control clipping and vertical scroll.
 - [x] **No JavaScript:** Core copy, links, locale routes, FAQ and disabled downloads work without JS. Hash-preserving switch is progressive enhancement; explicit section links remain available.
 - [x] **Metadata:** Per-locale title/description/canonical/hreflang, self-hosted share image, sitemap/robots and 404. Validate built output and HTTP assets.

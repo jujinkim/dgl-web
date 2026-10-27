@@ -53,7 +53,8 @@ npx --yes --package=node@22.23.4 -c 'npm ci && npm run check && npm run build &&
 | --------------------------------- | -------------------------------------------- |
 | `src/data/site.ts`                | 브랜드, 경로, 다운로드 상태와 목적지         |
 | `src/data/content.ts`             | 공통 타입의 영어·한국어 검토 콘텐츠          |
-| `src/components/`, `src/layouts/` | 공통 UI, 설명용 터미널, 메타데이터           |
+| `src/components/`, `src/layouts/` | 공통 UI, 앱 화면, 메타데이터                 |
+| `public/images/`                  | Hero의 실제 앱 스크린샷                      |
 | `src/lib/stars.ts`                | 빌드 시 GitHub 조회·검증·시간 제한·실패 처리 |
 | `src/styles/`                     | 공통 스타일, 화면 배치, CSS 효과·동작 줄이기 |
 | `tests/`, `scripts/`              | 단위·브라우저·실제 빌드 실패·성능 검증       |

@@ -17,7 +17,7 @@ for (const [language, path] of [
     await expect(page.locator('h1')).toHaveCount(1);
     await expect(page.locator('.name-expansion')).toHaveText('dDal gGak Life');
     await expect(page.locator('.preview figcaption')).toContainText(
-      language === 'en' ? 'Not an app screenshot' : '실제 앱 화면이나',
+      language === 'en' ? 'DaGaLi Client desktop app' : '데스크톱 앱 화면',
     );
     await expect(page.locator('.connection-flow li')).toHaveCount(4);
     await expect(page.locator('.feature-card')).toHaveCount(5);
@@ -195,7 +195,7 @@ for (const [language, path] of [
   }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto(path);
-    for (const selector of ['.flow-icon', '.agent-output', '.pane-lower']) {
+    for (const selector of ['.flow-icon', '.app-screenshot']) {
       expect(
         await page
           .locator(selector)
@@ -268,7 +268,7 @@ for (const [language, path] of [
         await page.evaluate(() => document.documentElement.scrollWidth),
       ).toBeLessThanOrEqual(width);
       const outside = await page
-        .locator('a, button, summary, h1, h2, .feature-card, .terminal-shell')
+        .locator('a, button, summary, h1, h2, .feature-card, .app-screenshot')
         .evaluateAll((els) =>
           els
             .filter((el) => {
