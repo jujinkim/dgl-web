@@ -172,3 +172,11 @@ The user's `public/image.png` from commit `e23f5c9` is now `public/images/dagali
 - Local mobile Lighthouse, three runs per language: Performance **97**, Accessibility/Best Practices/SEO **100**, **CLS 0**, LCP **2552–2555ms**. Reports remain in ignored `artifacts/performance/`. These measurements apply to local Chromium, not field traffic or physical devices.
 
 Publication follows the user's explicit push request through the existing main-push Pages workflow. Deployment and live screenshot verification are checked separately from these local results, with evidence in ignored `artifacts/hero/release.json` and `artifacts/hero/live.json`.
+
+## Simplified server preparation guide — 2026-10-28
+
+Both locales now lead with tmux as the only server preparation: existing tmux users need no extra server setup; others install tmux and connect with DGL. Two alternatives replace the four-step sequence, using an unordered list without numbers or arrows. Cards sit side by side on desktop and stack below 500px. The first FAQ repeats the same preparation guidance and existing SSH-account use. A short note retains the requirement to run work inside tmux and keep the server, session and processes running.
+
+Temporary Node 22.23.4: Astro/TypeScript 0 errors/warnings/hints; Prettier and static build passed; existing unit tests **13/13** and Chromium browser checks **35/35** passed. Browser coverage includes axe at 360/768/1440px, no-JS, keyboard navigation, locale anchors, disabled downloads, reduced motion, reflow and 200% text. Additional EN/KO checks at 360×800 and 1440×900 confirmed unordered alternatives, responsive card placement, no sequence decorations, no overflow and no page errors. Captures and structured results are in ignored `artifacts/quick-start/local/`; KO mobile and EN desktop captures were visually inspected. These results cover local output. Lighthouse was not rerun for this change.
+
+The user subsequently requested push completion. Publication uses the existing main-push Pages workflow; deployment and independent live EN/KO verification are recorded separately in ignored `artifacts/quick-start/release.json` and `artifacts/quick-start/live/verification.json`.

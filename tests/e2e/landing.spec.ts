@@ -19,7 +19,7 @@ for (const [language, path] of [
     await expect(page.locator('.preview figcaption')).toContainText(
       language === 'en' ? 'DaGaLi Client desktop app' : '데스크톱 앱 화면',
     );
-    await expect(page.locator('.connection-flow li')).toHaveCount(4);
+    await expect(page.locator('.connection-flow li')).toHaveCount(2);
     await expect(page.locator('.feature-card')).toHaveCount(5);
     await expect(page.locator('.faq-list details')).toHaveCount(5);
     const links = await page

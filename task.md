@@ -99,3 +99,10 @@ Implementation and local acceptance are complete. Authorized release recovery co
 - Additional EN/KO desktop/mobile review verified image decoding, original aspect ratio, alternative text, no horizontal overflow and served PNG bytes matching the source. Hero captures in ignored `artifacts/hero/` were visually inspected.
 - Mobile Lighthouse, three runs per locale: Performance 97, Accessibility/Best Practices/SEO 100, CLS 0, LCP 2552–2555ms. Reports remain in ignored `artifacts/performance/`.
 - User explicitly requested push completion. Publish through the existing main-push workflow and verify remote synchronization, Actions deployment and live EN/KO screenshot responses before handoff. Release evidence uses ignored `artifacts/hero/release.json` and `artifacts/hero/live.json`.
+
+## Simplified server preparation guide — 2026-10-28
+
+- Latest user request replaces the four-step usage guide with two cases: already using tmux means no extra server work; otherwise install tmux. Updated EN/KO navigation, guide and first FAQ, retaining a short tmux execution/persistence note.
+- Rendered alternatives as an unordered list, removed numbers/arrows, and used two desktop columns with stacked cards below 500px. Updated the existing browser count assertion.
+- Temporary Node 22.23.4: check/format/build passed, unit tests **13/13**, Chromium browser checks **35/35**. Additional EN/KO 360/1440px checks confirmed layout, unordered alternatives and no overflow/page errors. KO mobile and EN desktop captures visually inspected. Local evidence: ignored `artifacts/quick-start/local/`. Lighthouse was not rerun.
+- User subsequently requested push completion. Use the existing main-push Pages workflow, verify remote synchronization, successful deployment and live EN/KO delivery separately, and save evidence in ignored `artifacts/quick-start/release.json` and `artifacts/quick-start/live/verification.json`.

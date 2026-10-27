@@ -297,12 +297,11 @@ h2 {
   margin: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   border: 1px solid var(--line);
   border-radius: 5px;
 }
 .flow-step {
-  position: relative;
   min-width: 0;
   padding: 23px 24px;
 }
@@ -312,7 +311,6 @@ h2 {
 .flow-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 20px;
 }
 .flow-icon {
@@ -323,16 +321,6 @@ h2 {
 .flow-step:nth-child(2) .flow-icon {
   animation-delay: 0.25s;
 }
-.flow-step:nth-child(3) .flow-icon {
-  animation-delay: 0.5s;
-}
-.flow-step:nth-child(4) .flow-icon {
-  animation-delay: 0.75s;
-}
-.flow-number {
-  color: #8da395;
-  font: var(--text-small) var(--mono);
-}
 .flow-step h3 {
   margin: 0 0 6px;
   font-size: var(--text-body);
@@ -342,19 +330,6 @@ h2 {
   margin: 0;
   font-size: var(--text-small);
   color: var(--muted);
-}
-.flow-arrow {
-  position: absolute;
-  right: -10px;
-  top: 40%;
-  z-index: 1;
-  background: var(--bg);
-  color: #9cb6a4;
-  padding: 0 4px;
-  font: var(--text-small) var(--mono);
-}
-.flow-step:last-child .flow-arrow {
-  display: none;
 }
 .workflow-note {
   display: flex;
@@ -649,18 +624,6 @@ details[open] .faq-plus {
   .get-app-section {
     padding-top: 32px;
   }
-  .connection-flow {
-    grid-template-columns: 1fr 1fr;
-  }
-  .flow-step:nth-child(3) {
-    border-left: 0;
-  }
-  .flow-step:nth-child(n + 3) {
-    border-top: 1px solid var(--line);
-  }
-  .flow-arrow {
-    display: none;
-  }
   .feature-card {
     grid-column: span 3;
     padding: 23px;
@@ -763,6 +726,13 @@ details[open] .faq-plus {
   }
   .flow-step {
     padding: 18px 15px;
+  }
+  .connection-flow {
+    grid-template-columns: 1fr;
+  }
+  .flow-step + .flow-step {
+    border-left: 0;
+    border-top: 1px solid var(--line);
   }
   .flow-top {
     margin-bottom: 15px;

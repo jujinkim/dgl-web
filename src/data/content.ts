@@ -64,7 +64,7 @@ export const content: Record<Language, Content> = {
     workflowStack: 'tmux wrapper · session manager',
     nav: {
       label: 'On this page',
-      workflow: 'How it works',
+      workflow: 'Quick start',
       features: 'Features',
       getApp: 'Get App',
       faq: 'FAQ',
@@ -88,16 +88,20 @@ export const content: Record<Language, Content> = {
       footer: 'Standard tmux · local terminal or remote SSH',
     },
     workflow: {
-      eyebrow: '01 / HOW TO USE IT',
-      title: 'Run in tmux. Reconnect. Keep going.',
-      body: 'Start a tmux session and run your AI coding agents inside it. Use DaGaLi Client to find sessions, switch windows and panes, and reconnect to your work. The same standard tmux sessions remain accessible from a local terminal; use SSH when you need remote access.',
+      eyebrow: '01 / QUICK START',
+      title: 'tmux is all you need.',
+      body: 'If your server can run tmux, it is ready for DGL.',
       steps: [
-        { title: 'Start tmux', detail: 'Create a session for your work' },
-        { title: 'Run your agents', detail: 'Use your AI CLI inside tmux' },
-        { title: 'Manage with DGL', detail: 'Find sessions, windows & panes' },
-        { title: 'Reconnect', detail: 'Return with DGL or a local terminal' },
+        {
+          title: 'Already using tmux?',
+          detail: 'Connect with DGL. No extra server setup needed.',
+        },
+        {
+          title: 'No tmux yet?',
+          detail: 'Install tmux on your server, then connect with DGL.',
+        },
       ],
-      note: 'tmux keeps work running as long as the machine, session and processes stay alive. DaGaLi Client helps you manage and reconnect to those sessions. An ordinary shell alone does not provide the same persistence.',
+      note: 'Run your work inside tmux. Reconnect while your server, session and processes stay running.',
     },
     features: {
       eyebrow: '02 / LESS FRICTION',
@@ -146,9 +150,9 @@ export const content: Record<Language, Content> = {
       title: 'Before you start.',
       items: [
         {
-          question: 'Do I need SSH to use tmux?',
+          question: 'What do I need on my server?',
           answer:
-            'You can attach to standard tmux sessions directly from a local terminal on the machine running them. DaGaLi Client includes SSH as a way to reach remote sessions, using your own account and authentication. Install tmux and your AI CLI tools on the machine where the work runs, use a UTF-8 locale, and sign in to those tools yourself. The Client documents tmux 3.3–3.7 Control Mode support, with server checks on 3.3a and 3.7c.',
+            'If you already use tmux, no extra installation or setup is needed. Otherwise, install tmux on your server. DGL connects using your existing SSH account.',
         },
         {
           question: 'What does DaGaLi Client add to tmux?',
@@ -187,7 +191,7 @@ export const content: Record<Language, Content> = {
     workflowStack: 'tmux 래퍼 · 세션 재연결·관리',
     nav: {
       label: '페이지 탐색',
-      workflow: '사용 흐름',
+      workflow: '사용 가이드',
       features: '주요 기능',
       getApp: 'Get App',
       faq: 'FAQ',
@@ -211,16 +215,20 @@ export const content: Record<Language, Content> = {
       footer: '표준 tmux · 로컬 터미널 또는 원격 SSH',
     },
     workflow: {
-      eyebrow: '01 / 사용 흐름',
-      title: 'tmux에서 실행하고, 세션을 이어가세요.',
-      body: 'tmux 세션을 열고 그 안에서 AI 코딩 에이전트를 실행하세요. DaGaLi Client로 세션을 찾고 창·패널을 전환하며, 다시 연결해 작업을 이어갑니다. 같은 표준 tmux 세션은 로컬 터미널에서도 직접 사용할 수 있고, 원격 접속이 필요할 때 SSH를 사용합니다.',
+      eyebrow: '01 / 사용 가이드',
+      title: 'tmux만 있으면 준비 끝.',
+      body: '서버에서 tmux만 쓸 수 있으면 됩니다.',
       steps: [
-        { title: 'tmux 세션 시작', detail: '작업할 세션을 구성하세요' },
-        { title: 'AI 에이전트 실행', detail: 'tmux 안에서 AI CLI를 쓰세요' },
-        { title: 'DGL로 관리', detail: '세션·창·패널을 탐색하세요' },
-        { title: '다시 연결', detail: 'DGL이나 로컬 터미널로 이어가세요' },
+        {
+          title: '이미 tmux를 쓰고 있다면',
+          detail: '서버에서 추가로 할 일은 없습니다. DGL로 연결하세요.',
+        },
+        {
+          title: 'tmux가 없다면',
+          detail: '서버에 tmux만 설치한 뒤 DGL로 연결하세요.',
+        },
       ],
-      note: '작업을 실행한 컴퓨터와 세션·프로세스가 살아 있는 동안 작업을 유지하는 것은 tmux입니다. DaGaLi Client는 그 세션의 관리와 재연결을 돕습니다. 일반 셸만으로는 같은 작업 유지를 보장하지 않습니다.',
+      note: '작업은 tmux 안에서 실행하세요. 서버와 tmux 세션·프로세스가 살아 있으면 다시 연결해 이어갈 수 있습니다.',
     },
     features: {
       eyebrow: '02 / 주요 기능',
@@ -269,9 +277,9 @@ export const content: Record<Language, Content> = {
       title: '시작하기 전에.',
       items: [
         {
-          question: 'tmux를 쓰려면 SSH가 꼭 필요한가요?',
+          question: '서버에 무엇을 준비해야 하나요?',
           answer:
-            'tmux가 실행 중인 컴퓨터의 로컬 터미널에서 표준 tmux 세션에 직접 연결해 사용할 수 있습니다. DaGaLi Client의 내장 SSH는 내 계정과 인증 정보로 원격 세션에 접속할 때 쓰는 부가 기능입니다. 작업을 실행할 컴퓨터에 tmux와 AI CLI를 설치하고, UTF-8 로케일을 설정한 뒤 직접 로그인하세요. Client 문서는 tmux 3.3–3.7의 Control Mode를 지원 범위로 안내하며, 실제 서버 검증은 3.3a·3.7c에서 진행했습니다.',
+            '이미 tmux를 쓰고 있다면 추가 설치나 설정은 필요 없습니다. 없다면 서버에 tmux만 설치하세요. DGL은 기존 SSH 계정으로 연결합니다.',
         },
         {
           question: 'DaGaLi Client는 tmux에 무엇을 더하나요?',
