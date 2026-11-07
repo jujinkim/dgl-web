@@ -1,4 +1,4 @@
-# DaGaLi Web
+# DaGaLi
 
 **DaGaLi Client (DGL)** 소개 사이트. 이름 풀이는 **`dDal gGak Life`**.
 tmux를 감싸 세션 재연결·관리를 돕는 앱과 개발 상태를 안내합니다.

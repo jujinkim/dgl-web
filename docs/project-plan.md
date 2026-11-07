@@ -4,7 +4,7 @@ Approved implementation source: the user's DaGaLi Web plan, supplied with an exp
 
 ## Purpose and ownership
 
-Introduce **DaGaLi Client (DGL)** as a tmux wrapper for session reconnection and management. Explain how to run AI coding agents in standard tmux sessions, manage them with DGL, and attach directly from a local terminal when needed. Built-in SSH provides remote access. tmux supplies the underlying session and persistence behavior. Explain features, development evidence, GitHub, and unavailable downloads. Site name: **DaGaLi Web**. Name expansion: **`dDal gGak Life`**, preserving exact case. Target domain: `https://ddal.ggak.life`.
+Introduce **DaGaLi Client (DGL)** as a tmux wrapper for session reconnection and management. Explain how to run AI coding agents in standard tmux sessions, manage them with DGL, and attach directly from a local terminal when needed. Built-in SSH provides remote access. tmux supplies the underlying session and persistence behavior. Explain features, development evidence, GitHub, and unavailable downloads. Site name: **DaGaLi**. Name expansion: **`dDal gGak Life`**, preserving exact case. Target domain: `https://ddal.ggak.life`.
 
 The user owns and approved branding, English/Korean routes, restrained terminal design, content scope, disabled downloads, Git/main/existing GitHub repository, Astro/GitHub Pages, no extra workflow skills, and operating boundaries. The assistant chooses internal component boundaries, CSS, types, test tools, and build procedures within that scope. One operator, no fixed deadline, no paid services, payments, advertising, or visitor analytics.
 
@@ -72,3 +72,7 @@ The user's latest clarification supersedes the earlier SSH-first description and
 - Section 01 teaches a concrete sequence: start tmux, run AI agents inside it, use DGL to navigate sessions/windows/panes, reconnect with DGL or attach directly from a local terminal.
 - Apply the same roles to both locales, hero, core line, features, FAQ, metadata and share card. The terminal illustration depicts a remote example, explicitly labeled as such.
 - Preserve Get App ordering, type sizes, section IDs, disabled downloads, public API behavior and publication architecture. Verify the final copy in built and rendered EN/KO pages, then use the existing authorized main-push release and live checks.
+
+## Landing-page branding clarification — 2026-11-07
+
+The user confirmed this website introduces the Client app and requested removal of the public Web suffix, validation and push. Use **DaGaLi** for the header, site name, footer, 404 and share-card branding. Page titles are **DaGaLi Client — tmux session manager** (EN) and **DaGaLi Client — tmux 세션 관리자** (KO). Keep **DaGaLi Client** as the app name. The repository and internal build identifiers may retain their Web naming. Publish through the existing main-push Pages workflow and verify deployment and live delivery separately.

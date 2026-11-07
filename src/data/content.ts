@@ -58,7 +58,7 @@ interface Content {
 
 export const content: Record<Language, Content> = {
   en: {
-    title: 'DaGaLi Client — tmux session manager | DaGaLi Web',
+    title: 'DaGaLi Client — tmux session manager',
     description:
       'DaGaLi Client (DGL) is a development-stage tmux wrapper for session reconnection and management. Keep using standard tmux, with SSH for remote access.',
     workflowStack: 'tmux wrapper · session manager',
@@ -185,7 +185,7 @@ export const content: Record<Language, Content> = {
     },
   },
   ko: {
-    title: 'DaGaLi Client — tmux 세션 재연결·관리 | DaGaLi Web',
+    title: 'DaGaLi Client — tmux 세션 관리자',
     description:
       'tmux 세션 재연결과 관리를 돕는 개발 중인 래퍼, DaGaLi Client(DGL). 표준 tmux 세션을 로컬 터미널에서도 사용하고, 원격 접속에는 SSH를 활용하세요.',
     workflowStack: 'tmux 래퍼 · 세션 재연결·관리',

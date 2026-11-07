@@ -1,5 +1,5 @@
 export const site = {
-  name: 'DaGaLi Web',
+  name: 'DaGaLi',
   appName: 'DaGaLi Client',
   abbreviation: 'DGL',
   expansion: 'dDal gGak Life',

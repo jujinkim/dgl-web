@@ -12,10 +12,6 @@
   display: flex;
   color: var(--mint);
 }
-.brand-web {
-  color: var(--muted);
-  font-weight: 400;
-}
 .identity {
   display: flex;
   align-items: center;
