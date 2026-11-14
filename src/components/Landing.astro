@@ -36,24 +36,36 @@ const downloadIcons = { apple: 'store', google: 'play', desktop: 'desktop' };
       </div>
       <p class="workflow-stack">{t.workflowStack}</p>
       <div class="download-buttons" aria-describedby="download-notice">
-        {downloads.map((download) => (
-          <button
-            class="download-button"
-            type="button"
-            disabled={!download.available}
-            aria-describedby="download-notice"
-            data-download={download.id}
-          >
-            <Icon name={downloadIcons[download.id]} size={26} />
-            <span>
+        {downloads.map((download) =>
+          download.available && download.destination ? (
+            <a
+              class="download-button"
+              href={download.destination}
+              data-download={download.id}
+            >
+              <Icon name={downloadIcons[download.id]} size={26} />
               <strong>{download.label}</strong>
-              <span>{t.getApp.unavailable}</span>
-            </span>
-            <span class="download-dash" aria-hidden="true">
-              —
-            </span>
-          </button>
-        ))}
+              <span aria-hidden="true">↗</span>
+            </a>
+          ) : (
+            <button
+              class="download-button"
+              type="button"
+              disabled={!download.available}
+              aria-describedby="download-notice"
+              data-download={download.id}
+            >
+              <Icon name={downloadIcons[download.id]} size={26} />
+              <span>
+                <strong>{download.label}</strong>
+                <span>{t.getApp.unavailable}</span>
+              </span>
+              <span class="download-dash" aria-hidden="true">
+                —
+              </span>
+            </button>
+          ),
+        )}
       </div>
     </section>
     <section id="intro" class="hero container" aria-labelledby="hero-title">

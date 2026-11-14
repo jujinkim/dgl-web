@@ -8,9 +8,14 @@ const reply =
   async () =>
     new Response(JSON.stringify(data), { status });
 
-test('downloads retain destinations while every platform is unavailable', () => {
+test('Google Play is available while other platforms retain unavailable destinations', () => {
   assert.equal(downloads.length, 3);
-  assert.ok(downloads.every((download) => !download.available));
+  assert.deepEqual(
+    downloads
+      .filter((download) => download.available)
+      .map((download) => download.id),
+    ['google'],
+  );
   assert.equal(
     downloads.find((download) => download.id === 'apple')?.destination,
     null,

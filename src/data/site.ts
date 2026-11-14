@@ -32,7 +32,7 @@ export const downloads: readonly Download[] = [
   {
     id: 'google',
     label: 'Google Play',
-    available: false,
+    available: true,
     destination: `https://play.google.com/store/apps/details?id=${site.packageId}`,
   },
   {

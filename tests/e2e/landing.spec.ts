@@ -55,8 +55,14 @@ for (const [language, path] of [
     page,
   }) => {
     await page.goto(`${path}#get-app`);
-    const buttons = page.locator('[data-download]');
-    await expect(buttons).toHaveCount(3);
+    const buttons = page.locator('[data-download]:disabled');
+    await expect(buttons).toHaveCount(2);
+    await expect(
+      page.getByRole('link', { name: 'Google Play' }),
+    ).toHaveAttribute(
+      'href',
+      'https://play.google.com/store/apps/details?id=kim.jujin.dglc',
+    );
     const before = page.url();
     const external: string[] = [];
     page.on('request', (request) => {
@@ -84,7 +90,7 @@ for (const [language, path] of [
       await page.keyboard.press('Tab');
       expect(
         await page.evaluate(() =>
-          document.activeElement?.matches('[data-download]'),
+          document.activeElement?.matches('[data-download]:disabled'),
         ),
       ).toBe(false);
     }
@@ -178,7 +184,7 @@ for (const [language, path] of [
     await expect(page.locator('h1')).toContainText('DaGaLi Client');
     await page.locator('.hero-actions a[href="#get-app"]').click();
     await expect(page).toHaveURL(/#get-app$/);
-    for (const button of await page.locator('[data-download]').all())
+    for (const button of await page.locator('[data-download]:disabled').all())
       await expect(button).toBeDisabled();
     await page.locator('summary').first().click();
     await expect(page.locator('details').first()).toHaveAttribute('open', '');

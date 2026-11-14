@@ -163,7 +163,7 @@ export const content: Record<Language, Content> = {
           id: 'download-notice',
           question: 'Where can I download DaGaLi Client?',
           answer:
-            'Public downloads are not available yet. Apple App Store, Google Play and Desktop are all disabled here. Store listings and release timing are unconfirmed. The Apple button does not confirm iOS support or release. Desktop is planned to point to GitHub Releases when a release is ready; no numeric Apple App Store ID has been assigned. Follow the repository for current progress.',
+            'Get the Android app on Google Play. Apple App Store and Desktop downloads are not available yet. Their store listings and release timing are unconfirmed. The Apple button does not confirm iOS support or release. Desktop is planned to point to GitHub Releases when a release is ready; no numeric Apple App Store ID has been assigned. Follow the repository for current progress.',
         },
         {
           question: 'What is the platform status?',
@@ -290,7 +290,7 @@ export const content: Record<Language, Content> = {
           id: 'download-notice',
           question: 'DaGaLi Client는 어디서 받나요?',
           answer:
-            '아직 공개 다운로드를 제공하지 않습니다. Apple App Store·Google Play·Desktop 버튼은 모두 비활성 상태입니다. 스토어 등록과 출시 일정은 미정입니다. Apple 버튼은 iOS 지원이나 출시 확정을 뜻하지 않습니다. Desktop은 출시 준비가 끝나면 GitHub Releases로 연결할 예정이며, Apple의 숫자형 App Store ID는 미정입니다. 현재 진행 상황은 저장소에서 확인하세요.',
+            'Android 앱은 Google Play에서 다운로드할 수 있습니다. Apple App Store·Desktop 다운로드는 아직 제공하지 않습니다. 해당 스토어 등록과 출시 일정은 미정입니다. Apple 버튼은 iOS 지원이나 출시 확정을 뜻하지 않습니다. Desktop은 출시 준비가 끝나면 GitHub Releases로 연결할 예정이며, Apple의 숫자형 App Store ID는 미정입니다. 현재 진행 상황은 저장소에서 확인하세요.',
         },
         {
           question: '플랫폼별 개발 상태는 어떤가요?',
